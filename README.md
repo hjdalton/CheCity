@@ -1,6 +1,4 @@
-# Acebook
-
-This is a Node.js template for the Acebook engineering project.
+# FINAL PROJECT - The Incrudibles
 
 It uses:
 - [Express](https://expressjs.com/) web framework for Node.js.
