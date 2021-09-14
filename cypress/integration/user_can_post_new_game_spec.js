@@ -1,4 +1,5 @@
-var faker = require('faker')
+var faker = require('faker');
+const { ExpectationFailed } = require('http-errors');
 
 describe('New game', function() {
   it('can enter details to list a new game', function() {
@@ -17,5 +18,7 @@ describe('New game', function() {
     cy.get('.new-game').find('[id="time"]').type(randomTime);
     cy.get('.new-game').find('[id="address"]').type(randomAddress);
     cy.get('.new-game').submit();
+
+    cy.get('.games').should('contain', randomGame);
   })
 })

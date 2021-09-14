@@ -2,7 +2,11 @@ var Game = require('../models/games');
 
 var HomeController = {
   Index: function(req, res) {
-    res.render('home/index', { title: 'Games' });
+    Game.find(function(err, games) {
+      if (err) { throw err; }
+
+      res.render('home/index', { games: games });
+    });
   },
 
   New: function(req,res) {

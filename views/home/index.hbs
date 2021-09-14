@@ -4,9 +4,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>CheCity</title>
 </head>
 <body>
+  <div class="header">
+    <h1 class="title" style="font-size: 3.5em; text-shadow: 3px 3px #e0e0e0; color: #43D1AF;">{{title}}</h1>
+      <p style="font-size: 1.5em;">Welcome to CheCity</p>
+  </div>
+
   <h1>Here are some games!</h1>
+
+  <ul class="games">
+    {{#each games}}
+
+      <div class="game">
+        {{this.gametype}}
+      </div>
+
+    {{/each}}
+
+  </ul>
+
+
 </body>
 </html>
