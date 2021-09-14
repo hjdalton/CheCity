@@ -27,7 +27,15 @@ var HomeController = {
 
     res.status(201).redirect('/');
     });
+  },
+
+  Delete: function(req,res){
+    Game.findByIdAndRemove({ _id: req.body.id }, function(err) {
+      if (err) { throw err; }
+
+      res.status(201).redirect('/posts');
+    });
   }
-}
+ }
 
 module.exports = HomeController;
