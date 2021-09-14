@@ -8,12 +8,12 @@
 </head>
 <body>
   <form class="new-game" action="/newgame" method="post">
-    <input id="hostname" type="text" name="hostname" placeholder="Your Name">
-    <input id="gametype" type="text" name="gametype" placeholder="Game Type">
-    <textarea id="description" type="text" name="description" placeholder="Description" maxlength="200"></textarea>
-    <input id="date" type="date" name="date">
-    <input id="time" type="text" name="time">
-    <input id="address" type="text" name="address" placeholder="Address">
+    <input id="hostname" type="text" name="hostname" placeholder="Your Name" required>
+    <input id="gametype" type="text" name="gametype" placeholder="Game Type" required>
+    <textarea id="description" type="text" name="description" placeholder="Description" maxlength="200" required></textarea>
+    <input id="date" type="date" name="date" required>
+    <input id="time" type="text" name="time" required>
+    <input id="address" type="text" name="address" placeholder="Address" required>
     <input type="submit" value="Submit">
   </form>
 </body>
