@@ -21,7 +21,7 @@ var GamesSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  Address: {
+  address: {
     type: String,
     required: true
   }
