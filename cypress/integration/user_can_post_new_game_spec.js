@@ -1,7 +1,7 @@
 var faker = require('faker');
 
 describe('New game', function() {
-  it('can enter details to list a new game', function() {
+  it('can enter details to list a new game and displays them', function() {
     cy.visit('/newgame');
     var hostname = faker.name.findName();
     var randomGame = faker.lorem.word();
@@ -18,6 +18,12 @@ describe('New game', function() {
     cy.get('.new-game').find('[id="address"]').type(randomAddress);
     cy.get('.new-game').submit();
 
+    cy.get('.games').should('contain', hostname);
     cy.get('.games').should('contain', randomGame);
+    cy.get('.games').should('contain', randomDesc);
+    cy.get('.games').should('contain', 'Mon May 05 2025 01:00:00 GMT+0100 (British Summer Time)');
+    cy.get('.games').should('contain', randomTime);
+    cy.get('.games').should('contain', randomAddress);
+
   })
 })
