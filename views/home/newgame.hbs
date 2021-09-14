@@ -4,22 +4,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="/stylesheets/newgame_styles.css">
+  <title>New game</title>
 </head>
 <body>
+  <div class="bg-image">
   <nav class="newgame-nav">
     <div><a href="/">Home</a></div>
     <div><a href="#">blah</a></div>
     <div><a href="#">blah</a></div>
   </nav>
-  <form class="new-game" action="/newgame" method="post">
-    <input id="hostname" type="text" name="hostname" placeholder="Your Name" required>
-    <input id="gametype" type="text" name="gametype" placeholder="Game Type" required>
-    <textarea id="description" type="text" name="description" placeholder="Description" maxlength="200" required></textarea>
-    <input id="date" type="date" name="date" required>
-    <input id="time" type="text" name="time" placeholder= "Time" required>
-    <input id="address" type="text" name="address" placeholder="Address" required>
-    <input type="submit" value="Submit">
-  </form>
+  <div class="form-map-container">
+    <form class="new-game-form" action="/newgame" method="post">
+    <h1>List a game!</h1>
+      <input id="hostname" type="text" name="hostname" placeholder="Your Name" required>
+      <input id="gametype" type="text" name="gametype" placeholder="Game Type" required>
+      <textarea id="description" type="text" name="description" placeholder="Description" maxlength="200" required></textarea>
+      <input id="date" type="date" name="date" required>
+      <input id="time" type="text" name="time" placeholder= "Time" required>
+      <input id="address" type="text" name="address" placeholder="Address" required>
+      <input type="submit" value="Submit">
+      <div class="map">
+        
+      </div>
+    </form>
+  </div>
+  </div>
 </body>
 </html>
