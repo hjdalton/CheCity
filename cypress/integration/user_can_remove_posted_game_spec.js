@@ -24,6 +24,6 @@ describe('Remove Game', function() {
     
   
     cy.get('.posts').find(`[id = "${randomGame}"]`).find('[id = "forms"]').find('[id = "delete-game-form"]').submit();
-    cy.get(`[id = "${randomText1}"]`).should('not.exist'); 
+    cy.get(`[id = "${randomGame}"]`).should('not.exist'); 
   });
 });
