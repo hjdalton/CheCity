@@ -6,7 +6,7 @@ var HomeController = {
       if (err) { throw err; }
 
       res.render('home/index', { games: games });
-    });
+    }).sort({ 'created_on': -1 });
   },
 
   New: function(req,res) {
