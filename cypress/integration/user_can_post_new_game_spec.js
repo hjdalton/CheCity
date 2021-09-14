@@ -1,5 +1,4 @@
 var faker = require('faker');
-const { ExpectationFailed } = require('http-errors');
 
 describe('New game', function() {
   it('can enter details to list a new game', function() {
