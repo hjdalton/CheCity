@@ -17,33 +17,37 @@ html {
 }
 
 .map-form-container {
-  outline: 7.5px solid red;
-  text-align: center;
-  display: inline-block;
+	display: grid; 
+	grid-template-columns: 40% 40%; 
+	grid-template-rows: 350px; 
+	gap: 0px 0px; 
+	grid-template-areas: 
+		"new-game-form-div map"; 
+	overflow: hidden;
+}
+
+.new-game-form-div {
+	grid-area: new-game-form-div;
+	border: 5px solid red;
 }
 
 .map {
-  position: absolute;
-  right: 3.2%;
-  bottom: 14.4%;
-  height: 23.5em;
-  width: 25em;
+	grid-area: map;
+  width: 24em;
+	height: 24em;
   background-image: url("https://e3.365dm.com/18/05/1600x900/skynews-world-map-map_4298829.jpg?20180502134213");
   background-size: cover;
 }
 
 .new-game-form {
-  position: relative;
-  top: 5em;
 	font: 95% Arial, Helvetica, sans-serif;
 	max-width: 400px;
 	margin: 10px auto;
 	padding: 16px;
-	background: #F7F7F7;
-  padding-right: 30%;
+	background-color: #c7c7c7;
 }
-.new-game-form h1{
-  width: 40em;
+.new-game-form > h1{
+  width: 108.2%;
 	background: #727272;
 	padding: 15px 0 15px 0;
 	font-size: 140%;

@@ -9,26 +9,31 @@
 </head>
 <body>
   <div class="bg-image">
-  <nav class="newgame-nav">
-    <div><a href="/">Home</a></div>
-    <div><a href="#">blah</a></div>
-    <div><a href="#">blah</a></div>
-  </nav>
-  <div class="form-map-container">
-    <form class="new-game-form" action="/newgame" method="post">
-    <h1>List a game!</h1>
-      <input id="hostname" type="text" name="hostname" placeholder="Your Name" required>
-      <input id="gametype" type="text" name="gametype" placeholder="Game Type" required>
-      <textarea id="description" type="text" name="description" placeholder="Description" maxlength="200" required></textarea>
-      <input id="date" type="date" name="date" required>
-      <input id="time" type="text" name="time" placeholder= "Time" required>
-      <input id="address" type="text" name="address" placeholder="Address" required>
-      <input type="submit" value="Submit">
+    <nav class="newgame-nav">
+      <div><a href="/">Home</a></div>
+      <div><a href="#">blah</a></div>
+      <div><a href="#">blah</a></div>
+    </nav>
+    <div class="form-map-container">
+
+      <div class="new-game-form-div">
+        <form class="new-game-form" action="/newgame" method="post">
+          <h1>List a game!</h1>
+          <input id="hostname" type="text" name="hostname" placeholder="Your Name" required>
+          <input id="gametype" type="text" name="gametype" placeholder="Game Type" required>
+          <textarea id="description" type="text" name="description" placeholder="Description" maxlength="200" required></textarea>
+          <input id="date" type="date" name="date" required>
+          <input id="time" type="text" name="time" placeholder= "Time" required>
+          <input id="address" type="text" name="address" placeholder="Address" required>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+
       <div class="map">
+        <h6>this is a map</h6>
         
       </div>
-    </form>
-  </div>
+    </div>
   </div>
 </body>
 </html>
