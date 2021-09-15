@@ -5,14 +5,10 @@ var HomeController = {
     res.render('user/signup')
   },
 
-  New: function(req,res) {
-    res.render('home/newgame.hbs')
-  },
-
   Register: function(req, res) {
     var user = new User( { firstname: req.body.firstname, lastname: req.body.lastname, username: req.body.username, email: req.body.email, password: req.body.password});
       
-    User.exists({ username: req.body.username }, function(err, result) {
+    User.exists({ username: req.body.username }, function(err) {
       if (err) {
         res.send(err);
       } else {
