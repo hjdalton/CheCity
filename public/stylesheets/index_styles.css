@@ -63,8 +63,21 @@ html, body {
   border: 2px solid #ccc;
 }
 
+.signup > div {
+  display: inline-block;
+  background: rgb(243, 243, 243);
+  padding: 5px 15px 5px 15px;
+  right: 20px;
+}
 
+a {
+  text-decoration: none;
+  color: #2EBC99;
+}
 
+.signup > div:hover {
+  background: rgb(218, 218, 218);
+}
 
 body
 {
