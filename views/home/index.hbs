@@ -22,20 +22,28 @@
   <ul class="games">
     {{#each games}}
 
-      <div class="game">
+      <div class="game" id= {{this.gametype}}>
         Host: {{this.hostname}} <br>
         Game: {{this.gametype}} <br>
         Description: {{this.description}} <br>
         Date: {{this.date}} <br>
         Time: {{this.time}} <br>
         Address: {{this.address}} <br>
+        
+        <div id= "forms">
 
+          <form class="button" name="delete-game-form" id="delete-game-form" action="/deletegame" method="post">
+            <input id="id" type="hidden" name="id" value="{{this._id}}">
+            <input type="submit" value="Delete">
+          </form>
+
+        </div>
       </div>
       
-      <br><br>
+      <br>
+      <br>
 
     {{/each}}
-
   </ul>
 
 
