@@ -246,11 +246,11 @@ html {
  #menu
  {
 	 position: absolute;
-	 width: 300px;
+	 width: 7%;
 	 margin: -100px 0 0 -50px;
 	 padding: 50px;
 	 padding-top: 125px;
-	 
+	 height: 800px;
 	 background: #ededed;
 	 list-style-type: none;
 	 -webkit-font-smoothing: antialiased;
