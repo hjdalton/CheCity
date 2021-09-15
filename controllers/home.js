@@ -1,4 +1,4 @@
-var Game = require('../models/games');
+var Game = require('../models/game');
 
 var HomeController = {
   Index: function(req, res) {
