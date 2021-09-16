@@ -10,7 +10,7 @@ var UserController = {
       
     User.exists({ username: req.body.username }, function(err) {
       if (err) {
-        res.send(err);
+        res.send(err); //redirect rather than crash...
       } else {
         user.save(function(err) {
           if (err) { throw err; }
