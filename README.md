@@ -80,7 +80,8 @@ This starts the server on port `3030` and uses the `checity_test` MongoDB databa
 so that integration tests do not interact with the development server.
 
 ### Packages used:
-faker 
+npm install faker 
+npm install dotenv
 
 ### Deployed Web Page
 https://checity.herokuapp.com/
