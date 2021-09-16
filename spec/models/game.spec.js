@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 require('../mongodb_helper')
-var Game = require('../../models/game');
+var Game = require('../../models/game.js');
 
 
 describe('Game model', function() {

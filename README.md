@@ -78,3 +78,14 @@ npm run start:test
 ```
 This starts the server on port `3030` and uses the `acebook_test` MongoDB database,
 so that integration tests do not interact with the development server.
+
+### Packages used:
+faker 
+
+### Deployed Web Page
+https://checity.herokuapp.com/
+```
+Database hosted using MongoDB Atlas.
+Webpage hosted using Heroku.
+Auto deploy turned on for updated to the master branch.
+Procfile contains the server start up command.
