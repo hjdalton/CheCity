@@ -16,6 +16,10 @@ html, body {
   text-align: center;
 }
 
+.header, .games {
+  color: black;
+}
+
 .search_bar
  {
   overflow: hidden;
@@ -207,7 +211,6 @@ body
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
-  height: 800px;
   background: #ededed;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
