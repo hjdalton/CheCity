@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint .",
     "start": "nodemon ./bin/www",
-    "start:test": "PORT=3030 MONGODB_URL='mongodb://localhost/checity_test' npm start",
+    "start:test": "PORT=3030 MONGODB_URI='mongodb://localhost/checity_test' npm start",
     "test": "npm run lint && npm run test:unit && npm run test:integration",
     "test:unit": "jest --coverage",
     "test:integration": "cypress run"
@@ -18,12 +18,14 @@
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
     "express": "~4.16.1",
     "faker": "^5.5.3",
     "hbs": "^4.1.0",
     "http-errors": "~1.6.3",
-    "mongoose": "^5.8.11",
+    "mongoose": "^5.13.9",
     "morgan": "~1.9.1",
+    "node": "^16.9.1",
     "nodemon": "^1.19.4"
   },
   "devDependencies": {

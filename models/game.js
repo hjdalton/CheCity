@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var GamesSchema = new mongoose.Schema({ 
+var GameSchema = new mongoose.Schema({ 
   hostname: {
     type: String,
     required: true
@@ -29,6 +29,6 @@ var GamesSchema = new mongoose.Schema({
   { timestamps: { createdAt: 'created_on', updatedAt: 'updated_on' }
 });
 
-var Game = mongoose.model('Game', GamesSchema);
+var Game = mongoose.model('Game', GameSchema);
 
 module.exports = Game;

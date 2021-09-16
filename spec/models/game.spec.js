@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 require('../mongodb_helper')
-var Game = require('../../models/games');
+var Game = require('../../models/game');
 
 
 describe('Game model', function() {
@@ -39,6 +39,24 @@ describe('Game model', function() {
         done();
       });
     });
+  });
+
+  it('can remove a posted game', function(done) {
+    var game = new Game({ hostname: 'Dylan', gametype: 'some game', description: 'Fast Chess', date: '2018-05-21', time: '18:00', address: '2 Burnt House Farm Cottages' });
+    
+    game.save(function(err) {
+      expect(err).toBeNull();
+    
+      Game.findByIdAndRemove({ _id: game._id }, function(err) {
+        expect(err).toBeNull();
+
+        Game.find(function(err, games) {
+          expect(err).toBeNull();
+          expect(games[0]).toBeUndefined();
+          done();
+        });
+      });
+    });  
   });
 
   // it('can delete a post', function(done) {

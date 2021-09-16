@@ -1,4 +1,4 @@
-# FINAL PROJECT - The Incrudibles
+# FINAL PROJECT - The InCRUDibles
 
 It uses:
 - [Express](https://expressjs.com/) web framework for Node.js.
