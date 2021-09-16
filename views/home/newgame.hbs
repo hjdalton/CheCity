@@ -4,22 +4,71 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="/stylesheets/newgame_styles.css">
+  <title>New game</title>
 </head>
 <body>
-  <nav class="newgame-nav">
-    <div><a href="/">Home</a></div>
-    <div><a href="#">blah</a></div>
-    <div><a href="#">blah</a></div>
-  </nav>
-  <form class="new-game" action="/newgame" method="post">
-    <input id="hostname" type="text" name="hostname" placeholder="Your Name" required>
-    <input id="gametype" type="text" name="gametype" placeholder="Game Type" required>
-    <textarea id="description" type="text" name="description" placeholder="Description" maxlength="200" required></textarea>
-    <input id="date" type="date" name="date" required>
-    <input id="time" type="text" name="time" placeholder= "Time" required>
-    <input id="address" type="text" name="address" placeholder="Address" required>
-    <input type="submit" value="Submit">
-  </form>
+  <div class="bg-image">
+  <nav role="navigation">
+    <div id="menuToggle">
+        <!--
+        A fake / hidden checkbox is used as click reciever,
+        so you can use the :checked selector on it.
+        -->
+        <input type="checkbox" />
+        
+        <!--
+        Some spans to act as a hamburger.
+        
+        They are acting like a real hamburger,
+        not that McDonalds stuff.
+        -->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        
+        <!--
+        Too bad the menu has to be inside of the button
+        but hey, it's pure CSS magic.
+        -->
+        
+        <ul id="menu">
+          <a href="/"><li>Home</li></a>
+          <a href="/"><li>Profile</li></a>
+          <a href="#"><li>About</li></a>
+          <a href="#"><li>Info</li></a>
+          <a href="#"><li>Contact</li></a>
+          <a href="#"><li>Log out</li></a>
+        </ul>
+      </div>
+    </nav>
+    <div class="logo">
+      <img src="/images/CheCityLogo.png" alt="logo">
+    </div>
+    <div class="form-map-container">
+
+      <div class="new-game-form-div">
+        <form class="new-game-form" action="/newgame" method="post">
+          <div class="form-header">
+            <h1>List a game!</h1>
+          </div>
+          <input id="hostname" type="text" name="hostname" placeholder="Your Name" required>
+          <input id="gametype" type="text" name="gametype" placeholder="Game Type" required>
+          <textarea id="description" type="text" name="description" placeholder="Description" maxlength="200" required></textarea>
+          <input id="date" type="date" name="date" required>
+          <input id="time" type="text" name="time" placeholder= "Time" required>
+          <input id="address" type="text" name="address" placeholder="Address" required>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+
+      <div class="map-wrapper">
+        <div class="map">
+
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
