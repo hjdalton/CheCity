@@ -3,18 +3,21 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+	overflow: hidden;
 }
+
+body { position:absolute; top:0; bottom:0; right:0; left:0; }
 
 html {
   background: #CAD2C5; 
 }
 
 .logo {
+	position: absolute;
 	display: flex;
-	width: 100px;
-	height: 100px;
-	float: right;
-	margin-right: 2%;
+	width: 125px;
+	height: 125px;
+	right: 1.8%;
 }
 
 .form-map-container {
@@ -166,7 +169,7 @@ html {
  
  #menuToggle a:hover
  {
-	 color: rgb(255, 0, 234);
+	 color: #84a98c;
  }
  
  
