@@ -1,6 +1,6 @@
 var User = require('../models/user');
 
-var HomeController = {
+var UserController = {
   Signup: function(req, res) {
     res.render('user/signup')
   },
@@ -22,4 +22,4 @@ var HomeController = {
   }
  }
 
-module.exports = HomeController;
+module.exports = UserController;
