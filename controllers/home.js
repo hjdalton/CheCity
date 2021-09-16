@@ -1,12 +1,9 @@
 var Game = require('../models/games');
 
 var HomeController = {
-  Index: function(req, res) {
-    Game.find(function(err, games) {
-      if (err) { throw err; }
-
-      res.render('home/index', { games: games });
-    }).sort({ 'created_on': -1 });
+  Index: async function(req, res) {
+    const games = await Game.find({}).sort({ 'created_on': -1 });
+    res.render('home/index', { games: games });
   },
 
   New: function(req,res) {
