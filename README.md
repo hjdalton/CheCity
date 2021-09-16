@@ -84,7 +84,7 @@ faker
 
 ### Deployed Web Page
 https://checity.herokuapp.com/
-```
+
 Database hosted using MongoDB Atlas.
 Webpage hosted using Heroku.
 Auto deploy turned on for updated to the master branch.
