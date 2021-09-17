@@ -10,7 +10,7 @@ var HomeController = {
     res.render('home/newgame.hbs')
   },
 
-  Create: function(req, res) {
+  Create: async function(req, res) {
     var game = new Game({ 
       hostname: req.body.hostname, 
       gametype: req.body.gametype, 
@@ -18,12 +18,14 @@ var HomeController = {
       date: req.body.date, 
       time: req.body.time, 
       address: req.body.address })
-  
-    game.save(function(err) {
-      if (err) { throw err; }
-
+    
+    try {
+      await game.save();
     res.status(201).redirect('/');
-    });
+    } catch(err) {
+      if (err) { throw err; }
+    }
+    
   }
 }
 
