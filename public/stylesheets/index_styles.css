@@ -2,13 +2,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 
+
+/* SCROLLBAR STYLES */
+html {
+  scrollbar-width: normal;
+  scrollbar-color: #777 #555;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  width: 12px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: rgba(61, 61, 61, 0.333);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #777;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #d3d3d3;
+}
+/* SCROLLBAR STYLES END */
 html, body {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   background-image: linear-gradient(#84a98c, #cad2c5);
-  overflow: hidden;
 }
 
 .header
@@ -107,11 +130,11 @@ input:focus, textarea:focus, select:focus{
  input[type=text] {
   text-align: left;
   padding: 6px;
-  margin-top: 1.8%;
+  margin-top: 2.1%;
   margin-right: 16px;
   font-size: 17px;
   border-radius: 20px;
-  width: 18%;
+  width: 20%;
   border: 2px solid #ccc;
 }
 
