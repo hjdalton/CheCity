@@ -38,8 +38,8 @@ html {
 .new-game-form {
 	background-color: #ededed;
 	padding: 0.01% 3% 0 3%;
-	border-top-left-radius: 23.5px;
-	border-bottom-left-radius: 23.5px;
+	border-top-left-radius: 7.5px;
+	border-bottom-left-radius: 7.5px;
 }
 
 .map-wrapper {
@@ -47,8 +47,8 @@ html {
 	grid-column: span 6 / span 6;
 	background: #ededed;
 	top: 0;
-	border-top-right-radius: 23.5px;
-	border-bottom-right-radius: 23.5px;
+	border-top-right-radius: 7.5px;
+	border-bottom-right-radius: 7.5px;
 }
 
 .map {
@@ -57,8 +57,8 @@ html {
   background-size: cover;
 	height: 100%;
 	width: 100%;
-	border-top-right-radius: 20px;
-	border-bottom-right-radius: 20px;
+	border-top-right-radius: 7.5px;
+	border-bottom-right-radius: 7.5px;
 }
 
 
@@ -66,7 +66,7 @@ html {
 	background: #ededed;
 	font-weight: 300;
 	text-align: center;
-	color: #84A98C;
+	color: #2f3e46;
 	top: 0;
 	width: 105%;
 	height: 13.3%;
