@@ -18,9 +18,9 @@ html {
 .logo {
 	position: absolute;
 	display: flex;
-	width: 125px;
-	height: 125px;
-	right: 1.8%;
+	width: 145px;
+	height: 120px;
+	right: 1%;
 }
 
 .form-map-container {
