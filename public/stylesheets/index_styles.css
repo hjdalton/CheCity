@@ -9,16 +9,30 @@ html, body {
 .header
 {
   text-align: center;
+  margin: auto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
 }
 
 .games
 {
+  padding: 0;
+  list-style-type: none;
+}
+
+.game {
   text-align: center;
+  /* margin: auto; */
 }
 
 .header, .games {
   color: black;
 }
+
 
 .search_bar
  {
@@ -118,7 +132,7 @@ body
 
 #menuToggle a:hover
 {
-  color: rgb(255, 0, 234);
+  color: #84a98c;
 }
 
 
@@ -207,6 +221,7 @@ body
 #menu
 {
   position: absolute;
+  border-bottom-right-radius: 16px;
   width: 7%;
   margin: -100px 0 0 -50px;
   padding: 50px;
