@@ -12,13 +12,13 @@ describe('Remove Game', function() {
     var randomTime = '18:00'
     var randomAddress = faker.lorem.words();
 
-    cy.get('.new-game').find('[id="hostname"]').type(hostname);
-    cy.get('.new-game').find('[id="gametype"]').type(randomGame);
-    cy.get('.new-game').find('[id="description"]').type(randomDesc);
-    cy.get('.new-game').find('[id="date"]').type(randomDate);
-    cy.get('.new-game').find('[id="time"]').type(randomTime);
-    cy.get('.new-game').find('[id="address"]').type(randomAddress);
-    cy.get('.new-game').submit();
+    cy.get('.new-game-form').find('[id="hostname"]').type(hostname);
+    cy.get('.new-game-form').find('[id="gametype"]').type(randomGame);
+    cy.get('.new-game-form').find('[id="description"]').type(randomDesc);
+    cy.get('.new-game-form').find('[id="date"]').type(randomDate);
+    cy.get('.new-game-form').find('[id="time"]').type(randomTime);
+    cy.get('.new-game-form').find('[id="address"]').type(randomAddress);
+    cy.get('.new-game-form').submit();
 
     cy.get('.games').should('contain', randomGame);
     
