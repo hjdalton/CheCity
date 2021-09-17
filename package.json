@@ -26,7 +26,8 @@
     "mongoose": "^5.13.9",
     "morgan": "~1.9.1",
     "node": "^16.9.1",
-    "nodemon": "^1.19.4"
+    "nodemon": "^1.19.4",
+    "passport": "^0.4.1"
   },
   "devDependencies": {
     "cypress": "^3.8.3",
