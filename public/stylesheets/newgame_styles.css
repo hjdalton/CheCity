@@ -41,6 +41,9 @@ html {
 	padding: 0.01% 3% 0 3%;
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
+	border-left: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+	border-top: 1px solid lightgray;
 }
 
 .map-wrapper {
@@ -274,6 +277,8 @@ html {
 	 background: #ededed;
 	 list-style-type: none;
 	 -webkit-font-smoothing: antialiased;
+	 border-right: 2px solid lightgray;
+   border-bottom: 2px solid lightgray;
 	 /* to stop flickering of text in safari */
 	 
 	 transform-origin: 0% 0%;
