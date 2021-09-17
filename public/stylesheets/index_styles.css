@@ -8,6 +8,7 @@ html {
   scrollbar-width: normal;
   scrollbar-color: #777 #555;
   overflow-x: hidden;
+  background-image: linear-gradient(#84a98c, #cad2c5);
 }
 
 html::-webkit-scrollbar {
@@ -31,8 +32,16 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(#84a98c, #cad2c5);
 }
+
+body
+{
+  
+  /* make it look decent enough */
+  color: #cdcdcd;
+  font-family: "Comfortaa", sans-serif;
+}
+
 
 .header
 {
@@ -154,16 +163,6 @@ a {
 
 .signup > div:hover {
   background: rgb(218, 218, 218);
-}
-
-body
-{
-  margin: 0;
-  padding: 0;
-  
-  /* make it look decent enough */
-  color: #cdcdcd;
-  font-family: "Avenir Next", "Avenir", sans-serif;
 }
 
 #menuToggle
