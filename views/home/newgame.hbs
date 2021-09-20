@@ -80,6 +80,8 @@
         zoom: 3
     });
 
+  const nav = new mapboxgl.NavigationControl();
+  map.addControl(nav)
  
     map.on('click', (e) => {
         var pinDropCoords = e.lngLat;
