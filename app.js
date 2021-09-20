@@ -10,11 +10,9 @@ var userRouter = require('./routes/user');
 var app = express();
 
 //Passport
-var connection = require('./bin/www')
 const MongoStore = require('connect-mongo');
 var session = require('express-session');
 var passport = require('passport');
-var crypto = require('crypto');
 require('./passport.js')
 //Passport end
 
