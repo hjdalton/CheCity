@@ -4,6 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//Passport
+
+var session = require('express-session');
+var passport = require('passport');
+var crypto = require('crypto');
+
+//Passport end
+
 var homeRouter = require('./routes/home');
 var userRouter = require('./routes/user');
 
