@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/newgame_styles.css">
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
   <title>New game</title>
 </head>
 <body>
@@ -70,20 +70,29 @@
       </div>
   </div>
 
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
   <script>
-    mapboxgl.accessToken = 'pk.eyJ1Ijoib2NvZG5lci03IiwiYSI6ImNrdG9veWgxZDAyanUydm42dDdzZnR5OHYifQ.yfTVmCCSYLtrJrzaDAB-gg';
-    const coordinates = document.getElementById('coordinates');
-    const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11',
-        center: [0, 0],
-        zoom: 3
-    });
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZHlsYW5wNjY2IiwiYSI6ImNrdHNoNmF6MzFnOHMydnBuanZxMnc4dTMifQ.SRL9nwRnusKiGOWVy6wIZA';
+  const coordinates = document.getElementById('coordinates');
+  const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/dylanp666/cktsh77xt185e18o26jk5tcie',
+      center: [0, 0],
+      zoom: 3
+  });
+
+  map.addControl(
+    new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl
+    })
+  );
 
   const nav = new mapboxgl.NavigationControl();
   map.addControl(nav)
  
-    map.on('click', (e) => {
+    {{!-- map.on('click', (e) => {
         var pinDropCoords = e.lngLat;
 
         const marker = new mapboxgl.Marker({
@@ -97,7 +106,7 @@
             coordinates.style.display = 'block';
             coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
         }
-    })
+    }) --}}
 
     window.addEventListener('load', () => {
         map.fitBounds([
@@ -107,6 +116,9 @@
     });
 
     marker.on('dragend', onDragEnd);
+
+    
   </script>
+  
 </body>
 </html>
