@@ -86,9 +86,17 @@ so that integration tests do not interact with the development server.
 -passport-local
 -express-sessions
 -connect-flash
+-connect-mongo
+
+### Password Authentication 
+-reeCodeCamp tutorial https://www.youtube.com/watch?v=F-sFp_AvHc8
+-zachgoll tutorial repository: https://github.com/zachgoll/express-session-authentication-starter/tree/final
+
 
 ### API's
 Mapbox API used
+
+
 
 ### Deployed Web Page
 https://checity.herokuapp.com/
