@@ -16,6 +16,7 @@
     "node": ">=12.14.1"
   },
   "dependencies": {
+    "connect-mongo": "^4.6.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^10.0.0",
