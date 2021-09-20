@@ -24,7 +24,7 @@ var UserController = {
       
     User.exists({ username: req.body.username }, function(err, result) {
       if (err) {
-        res.send(err); //redirect rather than crash...
+        res.send(err);
       } else {
         if(result === false) {
           user.save(function(err) {
