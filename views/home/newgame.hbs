@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/newgame_styles.css">
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/address_bar.css" type="text/css">
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
   <title>New game</title>
 </head>
@@ -60,10 +61,13 @@
           <textarea id="description" type="text" name="description" placeholder="Description" maxlength="200" required></textarea>
           <input id="date" type="date" name="date" required>
           <input id="time" type="text" name="time" placeholder= "Time" required>
-          <input id="address" type="text" name="address" placeholder="Address" required>
+          <div id="geocoder" class="geocoder"></div>
           <input type="submit" value="Submit">
         </form>
+        
       </div>
+
+      {{!-- <input type="text" name="address" placeholder="Address" required> --}}
 
       <div id="map-wrapper">
         <div id="map"></div>
@@ -71,7 +75,6 @@
   </div>
 
   <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
-  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
   <script>
   mapboxgl.accessToken = 'pk.eyJ1IjoiZHlsYW5wNjY2IiwiYSI6ImNrdHNoNmF6MzFnOHMydnBuanZxMnc4dTMifQ.SRL9nwRnusKiGOWVy6wIZA';
   const coordinates = document.getElementById('coordinates');
@@ -82,12 +85,13 @@
       zoom: 3
   });
 
-  map.addControl(
-    new MapboxGeocoder({
-      accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl
-    })
-  );
+  const geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl,
+    countries: 'gb'
+  });
+
+  document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
   const nav = new mapboxgl.NavigationControl();
   map.addControl(nav)

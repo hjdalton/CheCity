@@ -90,7 +90,7 @@ html {
 	background: #fff;
 	margin-bottom: 4%;
 	border: 1px solid #ccc;
-	border-radius: 20px;
+	border-radius: 15px;
 	padding: 3%;
 	color: #555;
 	font: 95% Arial, Helvetica, sans-serif;
@@ -98,6 +98,7 @@ html {
 .new-game-form input[type="text"]:focus,
 .new-game-form input[type="date"]:focus,
 .new-game-form textarea[type="text"]:focus
+
 {
 	box-shadow: 0 0 5px lightgray;
 	padding: 3%;
