@@ -87,6 +87,8 @@ so that integration tests do not interact with the development server.
 -express-sessions
 -connect-flash
 
+### API's
+Mapbox API used
 
 ### Deployed Web Page
 https://checity.herokuapp.com/
