@@ -7,11 +7,11 @@ It uses:
 - [Mongoose](https://mongoosejs.com) to model objects in MongoDB.
 - [ESLint](https://eslint.org) for linting.
 - [Jest](https://jestjs.io/) for testing.
-- [Cypress](https://www.cypress.io/) for end-to-end testing.
+- [Cypress](https://www.cypress.io/) for end-to-end testing. (video creation disabled)
 
 ## Card wall
 
-REPLACE THIS TEXT WITH A LINK TO YOUR CARD WALL
+https://trello.com/b/ZlpSd7LV/checity
 
 ## Quickstart
 
@@ -31,7 +31,7 @@ REPLACE THIS TEXT WITH A LINK TO YOUR CARD WALL
 ### Set up your project
 
 1. Fork this repository
-1. Rename your fork to `acebook-<team name>`
+1. Rename your fork to `checity-<team name>`
 1. Clone your fork to your local machine
 1. Install Node.js dependencies
     ```
@@ -76,5 +76,24 @@ integration tests to pass.
 ```
 npm run start:test
 ```
-This starts the server on port `3030` and uses the `acebook_test` MongoDB database,
+This starts the server on port `3030` and uses the `checity_test` MongoDB database,
 so that integration tests do not interact with the development server.
+
+### Packages used:
+-faker 
+-dotenv
+-passport
+-passport-local
+-express-sessions
+-connect-flash
+
+### API's
+Mapbox API used
+
+### Deployed Web Page
+https://checity.herokuapp.com/
+
+Database hosted using MongoDB Atlas.
+Webpage hosted using Heroku.
+Auto deploy turned on for updated to the master branch.
+Procfile contains the server start up command.
