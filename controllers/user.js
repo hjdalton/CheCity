@@ -1,9 +1,14 @@
 var User = require('../models/user');
 const { genPassword } = require('../passport');
+const isAuth = require('../routes/isAuth.js').isAuth;
 
 var UserController = {
   Signup: function(req, res) {
-    res.render('user/signup')
+    if (isAuth){
+      res.redirect('/');
+    } else {
+      res.render('user/signup')
+    } 
   },
 
   Register: function(req, res) {
