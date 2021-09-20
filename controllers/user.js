@@ -19,7 +19,8 @@ var UserController = {
       username: req.body.username, 
       email: req.body.email, 
       hash: hash, 
-      salt: salt});
+      salt: salt
+    });
       
     User.exists({ username: req.body.username }, function(err, result) {
       if (err) {
