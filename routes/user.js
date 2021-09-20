@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
-const isAuth = require('../routes/isAuth.js').isAuth;
 var UserController = require('../controllers/user');
 
 router.get('/signup', UserController.Signup);
@@ -10,10 +9,10 @@ router.post('/signup', UserController.Register);
 // login routes not using controller
 
 router.get('/login', (req, res) => {
-  if (isAuth){
+  if (req.isAuthenticated()){
     res.redirect('/');
   } else {
-  res.render('user/login.hbs') 
+    res.render('user/login.hbs')
   }
 });
 

@@ -1,10 +1,9 @@
 var User = require('../models/user');
 const { genPassword } = require('../passport');
-const isAuth = require('../routes/isAuth.js').isAuth;
 
 var UserController = {
   Signup: function(req, res) {
-    if (isAuth){
+    if (req.isAuthenticated()) {
       res.redirect('/');
     } else {
       res.render('user/signup')
@@ -31,7 +30,7 @@ var UserController = {
       if (err) {
         res.send(err);
       } else {
-        if(result === false) {
+        if (result === false) {
           user.save(function(err) {
             if (err) { throw err; }
             res.status(201).redirect('/');

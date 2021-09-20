@@ -1,4 +1,4 @@
-module.exports.isAuth = (req, res, next) => {
+module.exports.checkAuth = (req, res, next) => {
   if (req.isAuthenticated()) {
       next();
   } else {

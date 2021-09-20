@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
-const isAuth = require('../routes/isAuth.js').isAuth;
+const checkAuth = require('./checkAuth.js').checkAuth;
 var HomeController = require('../controllers/home');
 
 router.get('/', HomeController.Index);
-router.get('/newgame', isAuth, HomeController.New);
-router.post('/newgame', HomeController.Create);
-router.post('/deletegame', isAuth, HomeController.Delete);
+router.get('/newgame', checkAuth, HomeController.New);
+router.post('/newgame', checkAuth, HomeController.Create);
+router.post('/deletegame', checkAuth, HomeController.Delete);
 
 
 module.exports = router;
