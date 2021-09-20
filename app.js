@@ -16,7 +16,6 @@ var session = require('express-session');
 var passport = require('passport');
 var crypto = require('crypto');
 require('./passport.js')
-
 //Passport end
 
 //Session
@@ -40,7 +39,7 @@ app.use((req, res, next) => {
   console.log(req.user);
   next();
 });
-///
+///Session End
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

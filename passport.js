@@ -2,7 +2,6 @@ var passport = require ('passport');
 var LocalStrategy = require ('passport-local').Strategy;
 var User = require ('./models/user.js')
 var crypto = require('crypto');
-var connection = require('./bin/www')
 
 var verifyCallback = (username, password, done) => {
 
@@ -22,7 +21,6 @@ var verifyCallback = (username, password, done) => {
   .catch((err) => {   
       done(err);
   });
-
 }
 
 var strategy = new LocalStrategy(verifyCallback);
