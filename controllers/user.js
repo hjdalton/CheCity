@@ -1,4 +1,5 @@
 var User = require('../models/user');
+const { genPassword } = require('../passport');
 
 var UserController = {
   Signup: function(req, res) {
@@ -6,7 +7,19 @@ var UserController = {
   },
 
   Register: function(req, res) {
-    var user = new User( { firstname: req.body.firstname, lastname: req.body.lastname, username: req.body.username, email: req.body.email, password: req.body.password});
+    const saltHash = genPassword(req.body.password);
+
+    const salt = saltHash.salt;
+    const hash = saltHash.hash;
+
+    
+    var user = new User( { 
+      firstname: req.body.firstname, 
+      lastname: req.body.lastname, 
+      username: req.body.username, 
+      email: req.body.email, 
+      hash: hash, 
+      salt: salt});
       
     User.exists({ username: req.body.username }, function(err, result) {
       if (err) {
@@ -15,7 +28,6 @@ var UserController = {
         if(result === false) {
           user.save(function(err) {
             if (err) { throw err; }
-            console.log(req.session);
             res.status(201).redirect('/');
           }); 
         } else {

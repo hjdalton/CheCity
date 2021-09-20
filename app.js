@@ -4,18 +4,23 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var homeRouter = require('./routes/home');
+var userRouter = require('./routes/user');
+
+var app = express();
+
 //Passport
 
 var session = require('express-session');
 var passport = require('passport');
 var crypto = require('crypto');
+require('./passport.js')
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 //Passport end
 
-var homeRouter = require('./routes/home');
-var userRouter = require('./routes/user');
-
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

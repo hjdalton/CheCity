@@ -16,26 +16,50 @@ var verifyCallback = (username, password, done) => {
                 const isValid = validPassword(password, user.hash, user.salt);
                 
                 if (isValid) {
-                    return cb(null, user);
+                    return done(null, user);
                 } else {
-                    return cb(null, false);
+                    return done(null, false);
                 }
             })
             .catch((err) => {   
-                cb(err);
+                done(err);
             });
   }));
 
 };
 
-var strategy = new LocalStrategy();
+var strategy = new LocalStrategy(verifyCallback);
 
+passport.use(strategy);
+
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  User.findById(id, function(err, user) {
+    done(err, user);
+  });
+});
 
 
 // asswordUtils
 
-function validPassword(password, hash, salt) {}
-function genPassword(password) {}
+
+function genPassword(password) {
+  var salt = crypto.randomBytes(32).toString('hex');
+  var genHash = crypto.pbkdf2Sync(password, salt, 10000, 64, 'sha512').toString('hex');
+  
+  return {
+    salt: salt,
+    hash: genHash
+  };
+}
+
+function validPassword(password, hash, salt) {
+  var hashVerify = crypto.pbkdf2Sync(password, salt, 10000, 64, 'sha512').toString('hex');
+  return hash === hashVerify;
+}
 
 module.exports.validPassword = validPassword;
 module.exports.genPassword = genPassword;
