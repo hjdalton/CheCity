@@ -1,6 +1,7 @@
 var faker = require('faker');
 
 describe('Log Out', function() {
+ 
   it('it doesnt allow a user to access certain pages after logging out', function(){
     cy.visit('/user/signup');
     var username = faker.lorem.word();
