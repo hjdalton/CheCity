@@ -32,7 +32,7 @@ describe('New game', function() {
     cy.get('.new-game-form').find('[id="description"]').type(randomDesc);
     cy.get('.new-game-form').find('[id="date"]').type(randomDate);
     cy.get('.new-game-form').find('[id="time"]').type(randomTime);
-    cy.get('.new-game-form').find('[id="address"]').type(randomAddress);
+    cy.get('.mapboxgl-ctrl-geocoder--input').type(randomAddress);
     cy.get('.new-game-form').submit();
 
     cy.get('.games').should('contain', hostname);

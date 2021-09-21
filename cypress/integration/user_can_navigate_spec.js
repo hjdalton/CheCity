@@ -22,11 +22,11 @@ describe('Navigation bar', function() {
 
     cy.visit('/');
     cy.get('[type="checkbox"]').check();
-    cy.get('a[href*="/newgame"]').click({force :true})
+    cy.get('a[href="/newgame"]').click({force :true})
     cy.url().should('include', '/newgame');
 
     cy.get('[type="checkbox"]').check();
-    cy.get('a[href*="/"]').click({force :true, multiple :true})
+    cy.get('a[href ="/"]').click({force :true})
     cy.url().should('eq', 'http://localhost:3030/');
   });
 });
