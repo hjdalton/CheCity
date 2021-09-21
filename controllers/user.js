@@ -40,7 +40,22 @@ var UserController = {
         }      
       }
     });
+  },
+
+  Signin: function(req, res) {
+    if (req.isAuthenticated()){
+      res.redirect('/');
+    } else {
+      res.render('user/login.hbs')
+    }
+  },
+
+  Logout: function(req,res, next) {
+    req.logout();
+    res.redirect('/');
+    next();
   }
+
  }
 
 module.exports = UserController;

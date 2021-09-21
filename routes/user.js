@@ -5,23 +5,8 @@ var UserController = require('../controllers/user');
 
 router.get('/signup', UserController.Signup);
 router.post('/signup', UserController.Register);
-
-// login routes not using controller
-
-router.get('/login', (req, res) => {
-  if (req.isAuthenticated()){
-    res.redirect('/');
-  } else {
-    res.render('user/login.hbs')
-  }
-});
-
+router.get('/login',UserController.Signin);
 router.post('/login', passport.authenticate('local', { failureRedirect: '/user/login', successRedirect: '/' }));
-
-router.get('/logout', (req, res, next) => {
-  req.logout();
-  res.redirect('/');
-  next();
-});
+router.get('/logout', UserController.Logout);
 
 module.exports = router;
