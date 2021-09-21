@@ -25,7 +25,7 @@ var HomeController = {
     game.save(function(err) {
       if (err) { throw err; }
 
-    res.status(201).redirect('/');
+      res.status(201).redirect('/');
     });
   },
 
