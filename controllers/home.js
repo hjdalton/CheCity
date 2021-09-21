@@ -15,7 +15,8 @@ var HomeController = {
 
   Create: function(req, res) {
     var game = new Game({ 
-      hostname: req.body.hostname, 
+      hostname: req.body.hostname,
+      hostid: req.body.hostid, 
       gametype: req.body.gametype, 
       description: req.body.description, 
       date: req.body.date, 
