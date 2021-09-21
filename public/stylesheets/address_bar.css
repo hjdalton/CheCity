@@ -13,7 +13,7 @@
   position: relative;
   background-color: #fff;
   margin-bottom: 3px;
-  width: 100%;
+  width: 100% !important;
   min-width: 240px;
   z-index: 1;
   border-radius: 4px;
@@ -24,11 +24,11 @@
 
 .mapboxgl-ctrl-geocoder--input {
   font: inherit;
-  width: 100%;
+  width: 100% !important;
   border: 0;
   background-color: transparent;
   margin: 0;
-  height: 50px;
+  height: 2.5em !important;
   color: #404040; /* fallback */
   color: rgba(0, 0, 0, 0.75);
   padding: 6px 45px;
