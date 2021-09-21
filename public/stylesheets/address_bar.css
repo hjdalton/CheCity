@@ -34,6 +34,7 @@
   padding: 6px 45px;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-indent: 20px;
   overflow: hidden;
 }
 
