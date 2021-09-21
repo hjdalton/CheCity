@@ -9,6 +9,36 @@ var userRouter = require('./routes/user');
 
 var app = express();
 
+//Passport
+const MongoStore = require('connect-mongo');
+var session = require('express-session');
+var passport = require('passport');
+require('./passport.js')
+//Passport end
+
+//Session
+const sessionStore = MongoStore.create({ mongoUrl: 'mongodb://localhost/checity_test' })
+
+app.use(session({
+  secret: 'mySecret',
+  resave: false,
+  saveUninitialized: true,
+  store: sessionStore,
+  cookie: {
+      maxAge: 1000 * 60 * 60 * 24 // Equals 1 day (1 day * 24 hr/1 day * 60 min/1 hr * 60 sec/1 min * 1000 ms / 1 sec)
+  }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use((req, res, next) => {
+  console.log(req.session);
+  console.log(req.user);
+  next();
+});
+///Session End
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');

@@ -21,11 +21,10 @@ var UserSchema = new mongoose.Schema({
     required: true,
     unique: false 
   },
-  password: {
-    type: String,
-    required: true,
-    unique: false 
-  }
+  
+  hash: String,
+
+  salt: String
 });
 
 var User = mongoose.model('User', UserSchema);

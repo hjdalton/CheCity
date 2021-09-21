@@ -1,21 +1,38 @@
 var User = require('../models/user');
+const { genPassword } = require('../passport');
 
 var UserController = {
   Signup: function(req, res) {
-    res.render('user/signup')
+    if (req.isAuthenticated()) {
+      res.redirect('/');
+    } else {
+      res.render('user/signup')
+    } 
   },
 
   Register: function(req, res) {
-    var user = new User( { firstname: req.body.firstname, lastname: req.body.lastname, username: req.body.username, email: req.body.email, password: req.body.password});
+    const saltHash = genPassword(req.body.password);
+
+    const salt = saltHash.salt;
+    const hash = saltHash.hash;
+
+    
+    var user = new User( { 
+      firstname: req.body.firstname, 
+      lastname: req.body.lastname, 
+      username: req.body.username, 
+      email: req.body.email, 
+      hash: hash, 
+      salt: salt
+    });
       
     User.exists({ username: req.body.username }, function(err, result) {
       if (err) {
-        res.send(err); //redirect rather than crash...
+        res.send(err);
       } else {
-        if(result === false) {
+        if (result === false) {
           user.save(function(err) {
             if (err) { throw err; }
-            console.log(req.session);
             res.status(201).redirect('/');
           }); 
         } else {
@@ -23,7 +40,22 @@ var UserController = {
         }      
       }
     });
+  },
+
+  Signin: function(req, res) {
+    if (req.isAuthenticated()){
+      res.redirect('/');
+    } else {
+      res.render('user/login.hbs')
+    }
+  },
+
+  Logout: function(req,res, next) {
+    req.logout();
+    res.redirect('/');
+    next();
   }
+
  }
 
 module.exports = UserController;

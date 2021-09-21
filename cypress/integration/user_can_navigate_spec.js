@@ -1,9 +1,14 @@
 describe('Home page', function() {
   it('can navigate', function() {
     cy.visit('/');
-    cy.get('.homepage-nav').find('[href="/newgame"]').click();
+    cy.get('[type="checkbox"]').check();
+    cy.get('a[href*="/newgame"]').click({force :true})
     cy.url().should('include', '/newgame');
-    cy.get('.newgame-nav').find('[href="/"]').click();
+
+    cy.get('[type="checkbox"]').check();
+    cy.get('a[href*="/"]').click({force :true})
+    cy.url().should('include', '/');
+
     cy.url().should('eq', 'http://localhost:3030/');
   });
 });
