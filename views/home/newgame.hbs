@@ -86,21 +86,6 @@
   const nav = new mapboxgl.NavigationControl();
   map.addControl(nav)
  
-    {{!-- map.on('click', (e) => {
-        var pinDropCoords = e.lngLat;
-
-        const marker = new mapboxgl.Marker({
-            draggable: true
-        })
-            .setLngLat([`${pinDropCoords.lng}`, `${pinDropCoords.lat}`])
-            .addTo(map);
-
-        function onDragEnd() {
-            const lngLat = marker.getLngLat();
-            coordinates.style.display = 'block';
-            coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
-        }
-    }) --}}
 
     window.addEventListener('load', () => {
         map.fitBounds([
