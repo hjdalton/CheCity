@@ -5,18 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/newgame_styles.css">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/address_bar.css" type="text/css">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
   <title>New game</title>
 </head>
 <body>
   <div class="bg-image">
   <nav role="navigation">
     <div id="menuToggle">
+
         <input type="checkbox" />
+        
         <span></span>
         <span></span>
         <span></span>
 
-     
         <ul id="menu">
           <a href="/"><li>Home</li></a>
           <a href="#"><li>Profile</li></a>
@@ -33,7 +37,7 @@
     <div class="form-map-container">
 
       <div class="new-game-form-div">
-        <form class="new-game-form" action="/newgame" method="post">
+        <form class="new-game-form" action="/newgame" method="post" onsubmit="hiddenValue()">
           <div class="form-header">
             <h1>List a game!</h1>
           </div>
@@ -42,17 +46,75 @@
           <textarea id="description" type="text" name="description" placeholder="Description" maxlength="200" required></textarea>
           <input id="date" type="date" name="date" required>
           <input id="time" type="text" name="time" placeholder= "Time" required>
-          <input id="address" type="text" name="address" placeholder="Address" required>
+          <div id="geocoder" class="geocoder"></div>
+          <input id="address" type="hidden" name="address" value="">
           <input type="submit" value="Submit">
         </form>
+        
       </div>
 
-      <div class="map-wrapper">
-        <div class="map">
 
-        </div>
+      <div id="map-wrapper">
+        <div id="map"></div>
       </div>
-    </div>
   </div>
+
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+  <script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZHlsYW5wNjY2IiwiYSI6ImNrdHNoNmF6MzFnOHMydnBuanZxMnc4dTMifQ.SRL9nwRnusKiGOWVy6wIZA';
+  const coordinates = document.getElementById('coordinates');
+  const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/dylanp666/cktsh77xt185e18o26jk5tcie',
+      center: [0, 0],
+      zoom: 3
+  });
+
+  const geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl,
+    countries: 'gb'
+  });
+
+  document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
+  document.getElementsByClassName('mapboxgl-ctrl-geocoder--input')[0].placeholder = "Address";
+
+  function hiddenValue() {
+    const address = document.getElementsByClassName('mapboxgl-ctrl-geocoder--input')[0].value;
+    document.getElementById("address").value = address;
+  }
+
+  const nav = new mapboxgl.NavigationControl();
+  map.addControl(nav)
+ 
+    {{!-- map.on('click', (e) => {
+        var pinDropCoords = e.lngLat;
+
+        const marker = new mapboxgl.Marker({
+            draggable: true
+        })
+            .setLngLat([`${pinDropCoords.lng}`, `${pinDropCoords.lat}`])
+            .addTo(map);
+
+        function onDragEnd() {
+            const lngLat = marker.getLngLat();
+            coordinates.style.display = 'block';
+            coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+        }
+    }) --}}
+
+    window.addEventListener('load', () => {
+        map.fitBounds([
+            [-7.57216793459, 49.959999905], // southwestern corner of the bounds
+            [1.68153079591, 58.6350001085] // northeastern corner of the bounds
+        ]);
+    });
+
+    marker.on('dragend', onDragEnd);
+
+    
+  </script>
+  
 </body>
 </html>
