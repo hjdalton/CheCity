@@ -10,8 +10,7 @@ var GameSchema = new mongoose.Schema({
     required: true
   },
   description: {
-    type: String,
-    required: true
+    type: String
   },
   date: {
     type: String,
@@ -21,8 +20,8 @@ var GameSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  geocoder: {
-    type: Object,
+  hidden: {
+    type: String,
     required: true
   }
 },

@@ -12,7 +12,8 @@
   font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
   position: relative;
   background-color: #fff;
-  width: 60%;
+  margin-bottom: 3px;
+  width: 100%;
   min-width: 240px;
   z-index: 1;
   border-radius: 4px;
