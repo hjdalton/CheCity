@@ -7,7 +7,7 @@ describe('Sign up', function() {
     mongoose.connection.collections.users.drop(function() {
     });
 
-    var user = new User({  firstname: 'test', lastname: 'test', username: 'test', email: 'email@test.com', password: 'test' }); 
+    var user = new User({  firstname: 'test', lastname: 'test', username: 'test', email: 'email@test.com',  hash: 'hash', salt: 'salt'}); 
 
     user.save(function(err) {
       expect(err).toBeNull();
@@ -20,7 +20,7 @@ describe('Sign up', function() {
       User.find(function(err, user) {
         expect(err).toBeNull();
 
-        expect(user[0]).toMatchObject({ firstname: 'test', lastname: 'test', username: 'test', email: 'email@test.com', password: 'test' });
+        expect(user[0]).toMatchObject({ firstname: 'test', lastname: 'test', username: 'test', email: 'email@test.com', hash: 'hash', salt: 'salt' });
         done();
       });
   });
