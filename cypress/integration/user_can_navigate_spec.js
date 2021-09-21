@@ -26,9 +26,7 @@ describe('Navigation bar', function() {
     cy.url().should('include', '/newgame');
 
     cy.get('[type="checkbox"]').check();
-    cy.get('a[href*="/"]').click({force :true})
-    cy.url().should('include', '/');
-
+    cy.get('a[href*="/"]').click({force :true, multiple :true})
     cy.url().should('eq', 'http://localhost:3030/');
   });
 });
