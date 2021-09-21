@@ -12,11 +12,13 @@
   font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
   position: relative;
   background-color: #fff;
-  width: 100%;
+  width: 60%;
   min-width: 240px;
   z-index: 1;
   border-radius: 4px;
   transition: width .25s, min-width .25s;
+  height: 2.42em;
+  border-radius: 15px;
 }
 
 .mapboxgl-ctrl-geocoder--input {
@@ -82,6 +84,8 @@
   overflow: hidden;
   font-size: 15px;
 }
+
+
 
 .mapboxgl-ctrl-bottom-left .suggestions,
 .mapboxgl-ctrl-bottom-right .suggestions {
