@@ -10,7 +10,7 @@ var HomeController = {
   },
 
   New: function(req,res) {
-    res.render('home/newgame.hbs')
+    res.render('home/newgame.hbs', {user: req.user})
   },
 
   Create: function(req, res) {

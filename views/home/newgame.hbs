@@ -43,7 +43,8 @@
           <div class="form-header">
             <h1>List a game!</h1>
           </div>
-          <input id="hostname" type="text" name="hostname" placeholder="Your Name" required>
+        
+          <input id="hostname" type="hidden" name="hostname" value = "{{user.firstname}} {{user.lastname}} " required>
           <input id="gametype" type="text" name="gametype" placeholder="Game Type" required>
           <textarea id="description" type="text" name="description" placeholder="Description" maxlength="200" required></textarea>
           <input id="date" type="date" name="date" required>
