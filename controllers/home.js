@@ -20,12 +20,12 @@ var HomeController = {
       description: req.body.description, 
       date: req.body.date, 
       time: req.body.time, 
-      address: req.body.address })
+      geocoder: req.body })
   
     game.save(function(err) {
       if (err) { throw err; }
 
-    res.status(201).redirect('/');
+      res.status(201).redirect('/');
     });
   },
 

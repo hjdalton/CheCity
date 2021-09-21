@@ -21,8 +21,8 @@ var GameSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  address: {
-    type: String,
+  geocoder: {
+    type: Object,
     required: true
   }
 },
