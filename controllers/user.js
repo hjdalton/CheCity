@@ -33,7 +33,7 @@ var UserController = {
         if (result === false) {
           user.save(function(err) {
             if (err) { throw err; }
-            res.status(201).redirect('/');
+            res.status(201).redirect('/user/login');
           }); 
         } else {
           res.render('user/signup');
