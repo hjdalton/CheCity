@@ -5,6 +5,10 @@ var GameSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  hostid: {
+    type: String,
+    required: true
+  },
   gametype: {
     type: String,
     required: true
