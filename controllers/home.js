@@ -20,7 +20,7 @@ var HomeController = {
       description: req.body.description, 
       date: req.body.date, 
       time: req.body.time, 
-      hidden: req.body.address })
+      address: req.body.address })
   
     game.save(function(err) {
       if (err) { throw err; }
