@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/index_styles.css">
   <title>CheCity</title>
-  <script src="/public/javascripts/index.js"></script>
+  {{!-- <script src="/public/javascripts/index.js"></script> --}}
 </head>
 <body>
 
@@ -69,7 +69,7 @@
             <form class="button" name="book-game-form" id="book-game-form" action="/bookgame" method="post">
               <input id="id" type="hidden" name="id" value="{{this._id}}">
               <input class= "spaces" type= "hidden" value= "{{this.spaces}}">
-              <input id= "bookButton" type="submit" value="Book">
+              <input class= "bookButton" type="submit" value="Book">
             </form>
 
           </div>
@@ -82,6 +82,21 @@
     {{/each}}
   </ul>
 
+<script>
+  function disableButton() {
+  let buttons = document.getElementsByClassName('bookButton');
+  let spaces = document.getElementsByClassName('spaces'); 
 
+  
+  for (i = 0; i < (spaces.length); i++) {
+    if (spaces[i].value === '0') {
+      buttons[i].disabled = true;    
+    } else {
+      buttons[i].disabled = false;
+    }
+  }
+}
+disableButton() 
+</script>
 </body>
 </html>
