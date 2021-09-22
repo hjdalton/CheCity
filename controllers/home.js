@@ -38,7 +38,7 @@ var HomeController = {
   },
 
   Book: function(req, res){
-    Game.findOneAndUpdate({ _id: req.body.id, spaces: {$gt: 0}}, {$inc:{ spaces: -1 }, $push: {guest_ids: "test"}}, {new: true},function(err) {
+    Game.findOneAndUpdate({ _id: req.body.id, spaces: {$gt: 0}}, {$inc:{ spaces: -1 }, $push: {guest_ids: req.user._id}}, {new: true},function(err) {
       if (err) { throw err;} 
       res.status(201).redirect('/');
     });  
