@@ -11,7 +11,6 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add("login", (email, password) => { ... })
-
 Cypress.Commands.add('signup', () => {
 
     cy.visit('/user/signup');
@@ -36,7 +35,7 @@ Cypress.Commands.add('login', () => {
 
 Cypress.Commands.add('newgame', () => {
   var faker = require('faker');
-  
+
   var hostname = faker.name.findName();
   var randomDesc = faker.lorem.words();
   var randomDate = '2025-05-05'

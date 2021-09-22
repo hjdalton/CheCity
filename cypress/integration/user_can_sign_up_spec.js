@@ -1,7 +1,6 @@
 var faker = require('faker');
 
 describe('Sign Up', function() {
- 
   it('allows the user to sign up', function() {
     cy.visit('/user/signup');
     var username = faker.lorem.word();
