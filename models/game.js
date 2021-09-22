@@ -5,6 +5,10 @@ var GameSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  host_id: {
+    type: String,
+    required: true
+  },
   gametype: {
     type: String,
     required: true
@@ -28,6 +32,10 @@ var GameSchema = new mongoose.Schema({
     type: Number,
     required: true,
     default: 1
+  },
+  guest_ids: {
+    type: Array,
+    required: true,
   }
 },
   { timestamps: { createdAt: 'created_on', updatedAt: 'updated_on' }
