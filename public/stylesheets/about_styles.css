@@ -222,3 +222,10 @@ html, body {
 {
   transform: none;
 }
+
+.form-map-container {
+	display: grid; 
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	padding: 2% 27.5% 10% 27.5%;
+	margin-top: 4%;
+}
