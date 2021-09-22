@@ -64,20 +64,21 @@ describe('Game model', function() {
 
   it('can find games by game type', function(done) {
     var game = new Game({ hostname: 'Dylan', gametype: 'rapid', description: 'Fast Chess', date: '2018-05-21', time: '18:00', address: '2 Burnt House Farm Cottages' });
-    var game = new Game({ hostname: 'Player', gametype: 'blitz', description: 'Fast Chess', date: '2018-05-21', time: '18:00', address: '2 Burnt House Farm Cottages' });
+    var game2 = new Game({ hostname: 'Player', gametype: 'blitz', description: 'Fast Chess', date: '2018-05-21', time: '18:00', address: '2 Burnt House Farm Cottages' });
     
     game.save(function(err) {
       expect(err).toBeNull();
-      
-      console.log(game)
-
-      Game.find({ gametype: 'blitz' }, function(err, games) {
-        console.log(game)
-        expect(err).toBeNull();
-        expect(games).toEqual(expect.objectContaining({ gametype: "blitz"}));
-        expect(games).not.toContain('rapid')
-        done();
+  
+    game2.save(function(err) {
+      expect(err).toBeNull();
+  
+    Game.find({ gametype: 'blitz' }, function(err, games) {
+      expect(err).toBeNull();
+      expect(games[0]).toMatchObject({ gametype: 'blitz'});
+      expect(games[0]).not.toMatchObject({ gametype: 'rapid'});
+      done();
         })
       });
     });
+  });
 });
