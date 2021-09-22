@@ -41,12 +41,15 @@
   <div class="filter">
     <label for="filtering">Choose a game:</label>
 
-      <select id="gametype" name="game-options" action="/filter" method="POST">
+      <form id="gametype" name="game-options" action="/filter" method="post">
+      <select>
         <option value="bullet-chess">Bullet Chess</option>
         <option value="chess2">Chess2</option>
         <option value="chess3">Chess3</option>
         <option value="chess4">Chess4</option>
       </select>
+      <input type="submit" value="Filter">
+      </form>
     </div>
   
     <ul class="games">

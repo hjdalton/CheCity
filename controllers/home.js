@@ -42,7 +42,9 @@ var HomeController = {
   },
 
   Filtered: function(req, res) {
-    Game.find({ gametype: req.body }, function(err) {
+    console.log(req.body.gametype)
+    
+    Game.find({ gametype: req.body.gametype }, function(err) {
       if (err) { throw err; }
 
       res.status(201).redirect('/filter');
