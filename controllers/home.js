@@ -42,12 +42,13 @@ var HomeController = {
   },
 
   Filtered: function(req, res) {
-    console.log(req.body.gametype)
+    console.log('below this line')
+    console.log(req.body.test)
     
-    Game.find({ gametype: req.body.gametype }, function(err) {
+    Game.find({ gametype: req.body.test }, function(err, games) {
       if (err) { throw err; }
 
-      res.status(201).redirect('/filter');
+      res.render('home/filter.hbs', { games: games });
     })
   }
  }
