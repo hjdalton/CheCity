@@ -10,7 +10,7 @@ var HomeController = {
   },
 
   New: function(req,res) {
-    res.render('home/newgame.hbs')
+    res.render('home/newgame.hbs');
   },
 
   Create: function(req, res) {
@@ -42,7 +42,11 @@ var HomeController = {
       if (err) { throw err;} 
       res.status(201).redirect('/');
     });  
+  },
+  About: function(req,res) {
+    res.render('home/about.hbs');
   }
+
  }
 
 module.exports = HomeController;

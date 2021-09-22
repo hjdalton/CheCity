@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/about_styles.css">
-  <title>CheCity</title>
+  <title>About us</title>
 </head>
 <body>
 
@@ -19,7 +19,6 @@
         <ul id="menu">
           <a href="/newgame"><li>New Game</li></a>
           <a href="/user/login"><li>Log In</li></a>
-          <a href="/about"><li>About</li></a>
           <a href="/user/signup"><li>Sign Up</li></a>
           <a href="/user/logout"><li>Log out</li></a>
         </ul>
@@ -34,53 +33,13 @@
     </nav> --}}
 
   <div class="search_bar">
-    <input type="text" placeholder="Search..">
     <img src="/images/CheCityLogoHome.png" alt="logo">
   </div> 
   {{!-- not functional --}}
 
   <div class="header">
-    <h1 class="title" style="font-size: 3.5em;">CheCity</h1>
-      <p style="font-size: 1.5em;">Welcome to CheCity</p>
-
-      <h2>Here are some games!</h2>
+    <h1 class="title" style="font-size: 3.5em;">This is us!</h1>
   </div>
-
-  
-  
-    <ul class="games">
-      {{#each games}}
-
-        <div class="game" id= {{this.gametype}}>
-          Host: {{this.hostname}} <br>
-          Game: {{this.gametype}} <br>
-          Description: {{this.description}} <br>
-          Date: {{this.date}} <br>
-          Time: {{this.time}} <br>
-          Address: {{this.address}} <br>
-          Spaces: {{this.spaces}}
-          <div id= "forms">
-
-            <form class="button" name="delete-game-form" id="delete-game-form" action="/deletegame" method="post">
-              <input id="id" type="hidden" name="id" value="{{this._id}}">
-              <input type="submit" value="Delete">
-            </form>
-
-            <form class="button" name="book-game-form" id="book-game-form" action="/bookgame" method="post">
-              <input id="id" type="hidden" name="id" value="{{this._id}}">
-              <input class= "spaces" type= "hidden" value= "{{this.spaces}}">
-              <input id= "bookButton" type="submit" value="Book">
-            </form>
-
-          </div>
-        </div>
-    </div>
-      
-      <br>
-      <br>
-
-    {{/each}}
-  </ul>
 
 
 </body>
