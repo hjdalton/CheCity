@@ -5,11 +5,12 @@ describe('Log Out', function() {
   it('it doesnt allow a user to access certain pages after logging out', function(){
     cy.visit('/user/signup');
     var username = faker.lorem.word();
+    var email = faker.internet.email();
     
     cy.get('#sign-up-form').find('[id="firstname"]').type('cy.test');
     cy.get('#sign-up-form').find('[id="lastname"]').type('cy.test');
     cy.get('#sign-up-form').find('[id="username"]').type(username);
-    cy.get('#sign-up-form').find('[id="email"]').type('cy.test@test.com');
+    cy.get('#sign-up-form').find('[id="email"]').type(email);
     cy.get('#sign-up-form').find('[id="password"]').type('1234');
     
     cy.get('#sign-up-form').submit();
