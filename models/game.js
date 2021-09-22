@@ -23,6 +23,11 @@ var GameSchema = new mongoose.Schema({
   address: {
     type: String,
     required: true
+  },
+  spaces: {
+    type: Number,
+    required: true,
+    default: 1
   }
 },
   { timestamps: { createdAt: 'created_on', updatedAt: 'updated_on' }
