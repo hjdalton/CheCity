@@ -2,23 +2,8 @@ var faker = require('faker');
 
 describe('Remove Game', function() {
   it('can remove posted game and see the changes', function() {
-    cy.visit('/user/signup');
-    var username = faker.lorem.word();
-    var email = faker.internet.email();
+    cy.login()
     
-    cy.get('#sign-up-form').find('[id="firstname"]').type('cy.test');
-    cy.get('#sign-up-form').find('[id="lastname"]').type('cy.test');
-    cy.get('#sign-up-form').find('[id="username"]').type(username);
-    cy.get('#sign-up-form').find('[id="email"]').type(email);
-    cy.get('#sign-up-form').find('[id="password"]').type('1234');
-    
-    cy.get('#sign-up-form').submit();
-  
-    cy.visit('/user/login');
-    cy.get('#login-form').find('[id="username"]').type(username);
-    cy.get('#login-form').find('[id="password"]').type('1234');
-    cy.get('#login-form').submit();
-
     cy.visit('/newgame');
 
     var hostname = faker.name.findName();
