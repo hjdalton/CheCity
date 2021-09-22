@@ -38,24 +38,23 @@
         <form class="new-game-form" action="/newgame" method="post" onsubmit="hiddenValue()">
           <div class="form-header">
             <h1>List a game!</h1>
-          </div>
-          <input id="hostname" type="text" name="hostname" placeholder="Your Name" required>
-          {{!-- <input id="gametype" name="gametype" required> --}}
-                <select id="gameoptions" name="gameoptions" onChange='selectChange(this.value)'>
-                  <option value="bullet-chess">Bullet Chess</option>
-                  <option value="chess2">Chess2</option>
-                  <option value="chess3">Chess3</option>
-                  <option value="chess4">Chess4</option>
-                </select> 
-          <input id="hidden-game-option" name="gametype" type="hidden">
-          <textarea id="description" type="text" name="description" placeholder="Description" maxlength="200" required></textarea>
-          <input id="date" type="date" name="date" required>
-          <input id="time" type="text" name="time" placeholder= "Time" required>
-          <div id="geocoder" class="geocoder"></div>
-          <input id="address" type="hidden" name="address" value="">
-          <input type="submit" value="Submit">
-        </form>
-        
+            </div>
+              <input id="hostname" type="text" name="hostname" placeholder="Your Name" required>
+                    <select id="gameoptions" name="gameoptions" onChange='selectChange(this.value)'>
+                      <option value="" disabled selected>Select your option</option>
+                      <option value="bullet-chess">Bullet Chess</option>
+                      <option value="chess2">Chess2</option>
+                      <option value="chess3">Chess3</option>
+                      <option value="chess4">Chess4</option>
+                    </select> 
+              <input id="hidden-game-option" name="gametype" type="hidden">
+              <textarea id="description" type="text" name="description" placeholder="Description" maxlength="200" required></textarea>
+              <input id="date" type="date" name="date" required>
+              <input id="time" type="text" name="time" placeholder= "Time" required>
+              <div id="geocoder" class="geocoder"></div>
+              <input id="address" type="hidden" name="address" value="">
+              <input type="submit" value="Submit">
+            </form>
       </div>
 
 
@@ -67,18 +66,6 @@
   <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
   <script>
     
-   
-{{!-- 
-  function submitHiddenGameOption() {
-    
-  }
-
-  console.log(hiddenValue())
-  console.log(submitHiddenGameOption()) --}}
-
-
-
-
     {{!-- mapbox code --}}
   mapboxgl.accessToken = 'pk.eyJ1IjoiZHlsYW5wNjY2IiwiYSI6ImNrdHNoNmF6MzFnOHMydnBuanZxMnc4dTMifQ.SRL9nwRnusKiGOWVy6wIZA';
   const coordinates = document.getElementById('coordinates');
