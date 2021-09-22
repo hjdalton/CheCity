@@ -1,10 +1,10 @@
 var faker = require('faker');
 
-describe('Remove Game', function() {
-  it('can remove posted game and see the changes', function() {
+describe('Filter Game', function() {
+  it('can enter details to list a new game and displays them', function() {
     cy.visit('/user/signup');
     var username = faker.lorem.word();
-    
+    // ------------ SIGN UP -------------//
     cy.get('#sign-up-form').find('[id="firstname"]').type('cy.test');
     cy.get('#sign-up-form').find('[id="lastname"]').type('cy.test');
     cy.get('#sign-up-form').find('[id="username"]').type(username);
@@ -12,14 +12,14 @@ describe('Remove Game', function() {
     cy.get('#sign-up-form').find('[id="password"]').type('1234');
     
     cy.get('#sign-up-form').submit();
-  
+  // ------------ LOG IN -------------//
     cy.visit('/user/login');
     cy.get('#login-form').find('[id="username"]').type(username);
     cy.get('#login-form').find('[id="password"]').type('1234');
     cy.get('#login-form').submit();
 
+// ------------ NEW GAME -------------//
     cy.visit('/newgame');
-
     var hostname = faker.name.findName();
     var randomDesc = faker.lorem.words();
     var randomDate = '2025-05-05'
@@ -27,17 +27,21 @@ describe('Remove Game', function() {
     var randomAddress = faker.lorem.words();
 
     cy.get('.new-game-form').find('[id="hostname"]').type(hostname);
-    cy.get('.new-game-form').find('[id="gameoptions"]').select('Bullet Chess')
+    cy.get('.new-game-form').find('[id="gameoptions"]').select('Bullet Chess');
     cy.get('.new-game-form').find('[id="description"]').type(randomDesc);
     cy.get('.new-game-form').find('[id="date"]').type(randomDate);
     cy.get('.new-game-form').find('[id="time"]').type(randomTime);
     cy.get('.mapboxgl-ctrl-geocoder--input').type(randomAddress);
     cy.get('.new-game-form').submit();
 
-    cy.get('.games').should('contain', randomDesc);
-    
-  
-    cy.get('.games').find(`[id = "${randomDesc}"]`).find('[id = "forms"]').find('[id = "delete-game-form"]').submit();
-    cy.get(`[id = "${randomDesc}"]`).should('not.exist'); 
-  });
-});
+    // ------------ ACTUAL TEST -------------//
+    cy.url().should('eq', 'http://localhost:3030/');
+
+    cy.get('#gametype').find('[id="gameoptions"]').select('Bullet Chess');
+    cy.get('#gametype').submit();
+
+    cy.url().should('eq', 'http://localhost:3030/filter');
+// check that the game types only have bullet-chess
+
+  })
+})
