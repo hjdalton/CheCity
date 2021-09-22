@@ -35,6 +35,18 @@ var HomeController = {
 
       res.status(201).redirect('/');
     });
+  },
+
+  Select: function(req, res) {
+      res.render('home/filter.hbs')
+  },
+
+  Filtered: function(req, res) {
+    Game.find({ gametype: req.body }, function(err) {
+      if (err) { throw err; }
+
+      res.status(201).redirect('/filter');
+    })
   }
  }
 
