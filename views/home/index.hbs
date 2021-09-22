@@ -56,7 +56,7 @@
     <ul class="games">
       {{#each games}}
 
-        <div class="game" id= {{this.gametype}}>
+        <div class="game" id= {{this.id}}>
           Host: {{this.hostname}} <br>
           Game: {{this.gametype}} <br>
           Description: {{this.description}} <br>
@@ -65,13 +65,12 @@
           Address: {{this.address}} <br>
           
           <div id= "forms">
-
             <form class="button" name="delete-game-form" id="delete-game-form" action="/deletegame" method="post">
               <input id="id" type="hidden" name="id" value="{{this._id}}">
               <input type="submit" value="Delete">
             </form>
-
           </div>
+          
         </div>
     </div>
       

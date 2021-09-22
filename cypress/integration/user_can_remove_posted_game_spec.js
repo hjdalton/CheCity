@@ -38,7 +38,7 @@ describe('Remove Game', function() {
     cy.get('.games').should('contain', randomDesc);
     
   
-    cy.get('.games').find(`[id = "${randomDesc}"]`).find('[id = "forms"]').find('[id = "delete-game-form"]').submit();
-    cy.get(`[id = "${randomDesc}"]`).should('not.exist'); 
+    cy.get('.games > :nth-child(1)').find('[id = "forms"]').find('[id = "delete-game-form"]').submit();
+    cy.get('.games').should('not.contain', randomDesc);
   });
 });

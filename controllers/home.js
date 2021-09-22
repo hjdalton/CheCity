@@ -46,7 +46,7 @@ var HomeController = {
       if (err) { throw err; }
 
       res.render('home/filter.hbs', { games: games });
-    })
+    }).sort({ 'created_on': -1 });
   }
  }
 
