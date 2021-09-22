@@ -31,7 +31,8 @@ var GameSchema = new mongoose.Schema({
   spaces: {
     type: Number,
     required: false,
-    default: 1
+    default: 1,
+    min: 0
   },
   guest_ids: {
     type: Array,

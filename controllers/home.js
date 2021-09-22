@@ -35,6 +35,13 @@ var HomeController = {
 
       res.status(201).redirect('/');
     });
+  },
+
+  Book: function(req, res){
+    Game.findByIdAndUpdate({ _id: req.body.id, spaces: {$gte: 0}}, {$inc:{ spaces: -1 }},function(err) {
+      if (err) { throw err;} 
+      res.status(201).redirect('/');
+    });  
   }
  }
 
