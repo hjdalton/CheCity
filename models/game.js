@@ -7,7 +7,7 @@ var GameSchema = new mongoose.Schema({
   },
   host_id: {
     type: String,
-    required: true
+    required: false
   },
   gametype: {
     type: String,
@@ -30,12 +30,12 @@ var GameSchema = new mongoose.Schema({
   },
   spaces: {
     type: Number,
-    required: true,
+    required: false,
     default: 1
   },
   guest_ids: {
     type: Array,
-    required: true,
+    required: false,
   }
 },
   { timestamps: { createdAt: 'created_on', updatedAt: 'updated_on' }

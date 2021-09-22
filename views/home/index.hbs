@@ -57,12 +57,17 @@
           Date: {{this.date}} <br>
           Time: {{this.time}} <br>
           Address: {{this.address}} <br>
-          
+          Spaces: {{this.spaces}}
           <div id= "forms">
 
             <form class="button" name="delete-game-form" id="delete-game-form" action="/deletegame" method="post">
               <input id="id" type="hidden" name="id" value="{{this._id}}">
               <input type="submit" value="Delete">
+            </form>
+
+            <form class="button" name="book-game-form" id="book-game-form" action="/bookgame" method="post">
+              <input id="id" type="hidden" name="id" value="{{this._id}}">
+              <input type="submit" value="Book">
             </form>
 
           </div>
