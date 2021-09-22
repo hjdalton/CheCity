@@ -43,9 +43,9 @@ var HomeController = {
 
   Filtered: function(req, res) {
     console.log('below this line')
-    console.log(req.body.test)
+    console.log(req.body.gameoptions)
     
-    Game.find({ gametype: req.body.test }, function(err, games) {
+    Game.find({ gametype: req.body.gameoptions }, function(err, games) {
       if (err) { throw err; }
 
       res.render('home/filter.hbs', { games: games });

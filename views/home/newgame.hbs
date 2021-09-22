@@ -40,7 +40,14 @@
             <h1>List a game!</h1>
           </div>
           <input id="hostname" type="text" name="hostname" placeholder="Your Name" required>
-          <input id="gametype" type="text" name="gametype" placeholder="Game Type" required>
+          {{!-- <input id="gametype" name="gametype" required> --}}
+                <select name="gameoptions" onChange='selectChange(this.value)'>
+                  <option value="bullet-chess">Bullet Chess</option>
+                  <option value="chess2">Chess2</option>
+                  <option value="chess3">Chess3</option>
+                  <option value="chess4">Chess4</option>
+                </select> 
+               
           <textarea id="description" type="text" name="description" placeholder="Description" maxlength="200" required></textarea>
           <input id="date" type="date" name="date" required>
           <input id="time" type="text" name="time" placeholder= "Time" required>
