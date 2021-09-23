@@ -18,7 +18,7 @@ describe('New game', function() {
     cy.get('.new-game-form').submit();
 
     cy.get('.games').should('contain', 'myname lastname');
-    cy.get('.games').should('contain', 'bullet');
+    cy.get('.games').should('contain', 'Bullet');
     cy.get('.games').should('contain', randomDesc);
     cy.get('.games').should('contain', randomDate);
     cy.get('.games').should('contain', randomTime);

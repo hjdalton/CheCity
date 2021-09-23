@@ -38,23 +38,23 @@
       <div class="new-game-form-div">
         <form class="new-game-form" action="/newgame" method="post" onsubmit="hiddenValue()">
           <div class="form-header">
-            <h1>List a game!</h1>
+            <h1>Host a game of Chess</h1>
           </div>
               <input id="hostname" type="hidden" name="hostname" value = "{{user.firstname}} {{user.lastname}} " required>
               <input id="hostid" type="hidden" name="hostid" value = "{{user._id}} " required>
                     <select id="gameoptions" name="gameoptions" onChange='selectChange(this.value)' required>
                       <option value="" disabled selected>Select your option</option>
-                        <option value="bullet">Bullet Chess</option>
-                        <option value="blitz">Blitz Chess</option>
-                        <option value="rapid">Rapid Chess</option>
-                        <option value="classic">Classic Chess</option>
+                        <option value="Bullet">Bullet Chess</option>
+                        <option value="Blitz">Blitz Chess</option>
+                        <option value="Rapid">Rapid Chess</option>
+                        <option value="Classic">Classic Chess</option>
                     </select> 
               <input id="hidden-game-option" name="gametype" type="hidden" required>
               <textarea id="description" type="text" name="description" placeholder="Description" maxlength="200" required></textarea>
               <input id="date" type="date" name="date" required>
               <input id="time" type="time" name="time" placeholder= "Time" required>
               <div id="geocoder" class="geocoder"></div>
-              <input id="address" type="hidden" name="address" value="">
+              <input id="address" type="hidden" name="address" value="" required>
               <input type="submit" value="Submit">
           </form>
       </div>
