@@ -8,13 +8,26 @@
   <title>Sign up</title>
 </head>
 <body>
-<nav class="navbar" style="text-align: right;">
-  <div><a class="navbarlink" href="/login">Sign In</a></div>
-</nav>
-<div class="header">
-  <h1 class="title" style="font-size: 3.5em; text-shadow: 3px 3px #e0e0e0; color: #43D1AF;">CheCity</h1>
-    <p style="font-size: 1.5em;">Welcome to CheCity</p>
-</div>
+	<nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox"/>
+      <span></span>
+      <span></span>
+      <span></span>
+
+      <ul id="menu">
+        <a href="/newgame"><li>New Game</li></a>
+        <a href="/"><li>Home</li></a>
+        <a href="/user/login"><li>Log In</li></a>
+        <a href="/user/signup"><li>Sign Up</li></a>
+        <a href="/user/logout"><li>Log out</li></a>
+      </ul>
+    </div>
+  </nav>
+<div class="search_bar">
+  <img src="/images/CheCityLogoHome.png" alt="logo">
+	<h1 class="title" style="font-size: 3em; text-shadow: 3px 3px #d1d1d1; color: #2f3e46;">CheCity</h1>
+</div> 
 <div class="sign-up-form-styles">
   <h1>Sign up!</h1>
   <form id="sign-up-form" action="/user/signup" method="post">
