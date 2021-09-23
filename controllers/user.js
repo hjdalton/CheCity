@@ -57,7 +57,7 @@ var UserController = {
   },
 
   Profile: function(req,res) {
-    // res.render('user/profile.hbs');
+    
     User.find({_id: req.params.id},function(err, user) {
       if (err) { throw err; }
 
