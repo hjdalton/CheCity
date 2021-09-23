@@ -345,3 +345,8 @@ input[type=submit]:active {
 .delete-button, .book-button {
   display: inline-block;
 }
+
+.bookButton:disabled,
+.bookButton[disabled] {
+  background: #cad2c5;
+}
