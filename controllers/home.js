@@ -59,6 +59,22 @@ var HomeController = {
 
       res.render('home/filter.hbs', { games: games });
     }).sort({ 'created_on': -1 });
+  },
+
+  Hosting: function(req,res, next) {
+
+    Game.find({ hostid: req.params.id }, function(err, hosting) {
+      if (err) { throw err; }
+      
+      console.log(hosting)
+
+      res === hosting
+
+      console.log('find me')
+      console.log(hosting)
+
+      next();
+    })
   }
 
  }
