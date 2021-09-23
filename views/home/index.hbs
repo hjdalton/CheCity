@@ -34,7 +34,7 @@
   <div class="header">
       <p style="font-size: 2em; color: #2f3e46; text-shadow: 0 0 2px lightgray;">Welcome to CheCity</p>
 
-      <h2 style="font-size: 1.8em; color: #2f3e46; text-shadow: 0 0 2px lightgray;">Here are some games!</h2>
+      <h2 style="font-size: 1.8em; color: #2f3e46; text-shadow: 0 0 2px lightgray;">Choose to host or attend a game of chess!</h2>
   <div class="filter">
     <label for="filtering" style="text-shadow: 0 0 2px lightgray;">Choose a game:</label>
 
@@ -60,12 +60,17 @@
       {{#each games}}
 
         <div class="game" id= {{this.id}}>
-          Host: <a href="/user/profile/{{this.hostid}}">{{this.hostname}}</a> <br>
-          Game: {{this.gametype}} <br>
-          Description: {{this.description}} <br>
-          Date: {{this.date}} <br>
-          Time: {{this.time}} <br>
-          Address: {{this.address}} <br>
+          Host: <a href="/user/profile/{{this.hostid}}">{{this.hostname}}</a> <br><br>
+
+          Game: {{this.gametype}} <br><br>
+
+          Description: {{this.description}} <br><br>
+
+          Date: {{this.date}} <br><br>
+          Time: {{this.time}} <br><br>
+
+          Address: {{this.address}} <br><br>
+
           Spaces: {{this.spaces}}
           <div id= "forms">
 
