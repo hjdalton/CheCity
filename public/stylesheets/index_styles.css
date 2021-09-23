@@ -103,6 +103,11 @@ body
   border-bottom: 2px solid lightgray;
 }
 
+.search_bar > h1 {
+  color: #2f3e46;
+  text-shadow: 0 0 2px lightgray;
+}
+
 input:focus, textarea:focus, select:focus{
   outline: none;
   box-shadow: 0 0 5px lightgray;
