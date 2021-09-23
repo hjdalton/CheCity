@@ -4,16 +4,39 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/profile_styles.css">
   <title>Document</title>
 </head>
 <body>
- 
-  {{#each user}}
-    Username: {{this.username}} <br>
-    Name: {{this.firstname}} {{this.lastname}}
-    Email: {{this.email}}
-  {{/each}}
+  <nav role="navigation">
+    <div id="menuToggle">
+        <input type="checkbox"/>
+        <span></span>
+        <span></span>
+        <span></span>
 
+        <ul id="menu">
+          <a href="/newgame"><li>New Game</li></a>
+          <a href="/"><li>Home</li></a>
+          <a href="/user/login"><li>Log In</li></a>
+          <a href="/user/signup"><li>Sign Up</li></a>
+          <a href="/user/logout"><li>Log out</li></a>
+        </ul>
+      </div>
+    </nav>
+
+  <div class="search_bar">
+    <img src="/images/CheCityLogoHome.png" alt="logo">
+		<h1 class="title" style="font-size: 3em; text-shadow: 3px 3px #d1d1d1; color: #2f3e46;">CheCity</h1>
+  </div> 
+
+  <div class="userinfo">
+    {{#each user}}
+      Username: {{this.username}} <br>
+      Name: {{this.firstname}} {{this.lastname}} <br>
+      Email: {{this.email}}
+    {{/each}}
+  </div>
 </body>
 </html>
 
