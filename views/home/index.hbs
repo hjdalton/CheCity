@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/index_styles.css">
   <title>CheCity</title>
-  {{!-- <script src="/public/javascripts/index.js"></script> --}}
 </head>
 <body>
 
@@ -19,8 +18,8 @@
 
         <ul id="menu">
           <a href="/newgame"><li>New Game</li></a>
-          <a href="/user/login"><li>Log In</li></a>
           <a href="/about"><li>About</li></a>
+          <a href="/user/login"><li>Log In</li></a>
           <a href="/user/signup"><li>Sign Up</li></a>
           <a href="/user/logout"><li>Log out</li></a>
         </ul>
@@ -28,10 +27,8 @@
     </nav>
 
   <div class="search_bar">
-    <input type="text" placeholder="Search..">
     <img src="/images/CheCityLogoHome.png" alt="logo">
   </div> 
-  {{!-- not functional --}}
 
   <div class="header">
     <h1 class="title" style="font-size: 3.5em;">CheCity</h1>
@@ -63,7 +60,8 @@
       {{#each games}}
 
         <div class="game" id= {{this.id}}>
-          Host: {{this.hostname}} <br>
+          Host: <a href="/user/profile/{{this.hostid}}">{{this.hostname}}</a> <br>
+          {{this.hostid}}
           Game: {{this.gametype}} <br>
           Description: {{this.description}} <br>
           Date: {{this.date}} <br>
