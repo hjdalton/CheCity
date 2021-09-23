@@ -1,2 +1,20 @@
-<h1>{{user}}</h1>
-username: {{user.username}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+ 
+  {{#each user}}
+    Username: {{this.username}} <br>
+    Name: {{this.firstname}} {{this.lastname}}
+    Email: {{this.email}}
+  {{/each}}
+
+</body>
+</html>
+
+
