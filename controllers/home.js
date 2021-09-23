@@ -36,7 +36,31 @@ var HomeController = {
 
       res.status(201).redirect('/');
     });
+  },
+
+  Book: function(req, res){
+    Game.findOneAndUpdate({ _id: req.body.id, spaces: {$gt: 0}}, {$inc:{ spaces: -1 }, $push: {guest_ids: req.user._id}}, {new: true},function(err) {
+      if (err) { throw err;} 
+      res.status(201).redirect('/');
+    });  
+  },
+
+  About: function(req,res) {
+    res.render('home/about.hbs');
+    },
+
+  Select: function(req, res) {
+      res.render('home/filter.hbs')
+  },
+
+  Filtered: function(req, res) {
+    Game.find({ gametype: req.body.gameoptions }, function(err, games) {
+      if (err) { throw err; }
+
+      res.render('home/filter.hbs', { games: games });
+    }).sort({ 'created_on': -1 });
   }
+
  }
 
 module.exports = HomeController;
