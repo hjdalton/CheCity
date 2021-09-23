@@ -62,15 +62,17 @@
           Spaces: {{this.spaces}}
           <div id= "forms">
 
-            <form class="button" name="delete-game-form" id="delete-game-form" action="/deletegame" method="post">
+            <form class="delete-button" name="delete-game-form" id="delete-game-form" action="/deletegame" method="post">
               <input id="id" type="hidden" name="id" value="{{this._id}}">
-              <input type="submit" value="Delete">
+              {{!-- <input type="submit" value="Delete"> --}}
+              <p class="submit"><input type="submit" name="delete" value="Delete"></p>
             </form>
 
-            <form class="button" name="book-game-form" id="book-game-form" action="/bookgame" method="post">
+            <form class="book-button" name="book-game-form" id="book-game-form" action="/bookgame" method="post">
               <input id="id" type="hidden" name="id" value="{{this._id}}">
               <input class= "spaces" type= "hidden" value= "{{this.spaces}}">
-              <input id= "bookButton" type="submit" value="Book">
+              {{!-- <input id= "bookButton" type="submit" value="Book"> --}}
+              <p class="submit"><input id= "bookButton" type="submit" name="book" value="Book"></p>
             </form>
 
           </div>
