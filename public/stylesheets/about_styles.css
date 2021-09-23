@@ -56,10 +56,6 @@ html, body {
   color: black;
 }
 
-.title {
-
-}
-
 .search_bar
  {
   position: absolute;
@@ -70,6 +66,7 @@ html, body {
   top: 0;
   width: 100%;
   border-bottom: 2px solid lightgray;
+  font-size: 1.4em;
 }
 
 
