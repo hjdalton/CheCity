@@ -19,7 +19,8 @@ require('./passport.js')
 //Passport end
 
 //Session
-const sessionStore = MongoStore.create({ mongoUrl: `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@checity.tvpm7.mongodb.net/checity?retryWrites=true&w=majority` })
+var mongoDbUrl = process.env.MONGODB_URI || `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@checity.tvpm7.mongodb.net/checity?retryWrites=true&w=majority`;
+const sessionStore = MongoStore.create({ mongoUrl: mongoDbUrl })
 
 app.use(session({
   secret: 'mySecret',
