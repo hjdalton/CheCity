@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/index_styles.css">
   <title>CheCity</title>
-  <script src="/public/javascripts/index.js"></script>
+  {{!-- <script src="/public/javascripts/index.js"></script> --}}
 </head>
 <body>
 
@@ -27,13 +27,6 @@
       </div>
     </nav>
 
-    {{!-- <nav class="signup"> 
-     <div> 
-       <a href="/user/login">Log in</a> 
-       <a href="/user/signup">Sign Up</a>
-      </div>
-    </nav> --}}
-
   <div class="search_bar">
     <input type="text" placeholder="Search..">
     <img src="/images/CheCityLogoHome.png" alt="logo">
@@ -47,12 +40,29 @@
       <h2 style="font-size: 1.8em; color: #2f3e46;">Here are some games!</h2>
   </div>
 
+
   
   <div class="game-box">
+
+  <div class="filter">
+    <label for="filtering">Choose a game:</label>
+
+      <form id="gametype" name="gametype" action="/filter" method="post">
+      <select id="gameoptions" name="gameoptions">
+        <option value="" disabled selected>Select your option</option>
+        <option value="bullet">Bullet Chess</option>
+        <option value="blitz">Blitz Chess</option>
+        <option value="rapid">Rapid Chess</option>
+        <option value="classic">Classic Chess</option>
+      </select>
+      <input type="submit" value="Filter">
+      </form>
+    </div>
+  
     <ul class="games">
       {{#each games}}
 
-        <div class="game" id= {{this.gametype}}>
+        <div class="game" id= {{this.id}}>
           Host: {{this.hostname}} <br>
           Game: {{this.gametype}} <br>
           Description: {{this.description}} <br>
@@ -62,28 +72,45 @@
           Spaces: {{this.spaces}}
           <div id= "forms">
 
+
             <form class="delete-button" name="delete-game-form" id="delete-game-form" action="/deletegame" method="post">
-              <input id="id" type="hidden" name="id" value="{{this._id}}">
-              {{!-- <input type="submit" value="Delete"> --}}
+              <input id="id" type="hidden" name="id" value="{{this._id}}">           
               <p class="submit"><input type="submit" name="delete" value="Delete"></p>
             </form>
 
             <form class="book-button" name="book-game-form" id="book-game-form" action="/bookgame" method="post">
               <input id="id" type="hidden" name="id" value="{{this._id}}">
               <input class= "spaces" type= "hidden" value= "{{this.spaces}}">
-              {{!-- <input id= "bookButton" type="submit" value="Book"> --}}
-              <p class="submit"><input id= "bookButton" type="submit" name="book" value="Book"></p>
+              <p class="submit"><input class= "bookButton" type="submit" name="book" value="Book"></p>
             </form>
-
           </div>
+          
         </div>
       
         <br>
         <br>
 
+
       {{/each}}
     </ul>
   </div>
 
+<script>
+  function disableButton() {
+    let buttons = document.getElementsByClassName('bookButton');
+    let spaces = document.getElementsByClassName('spaces'); 
+
+
+    
+    for (i = 0; i < (spaces.length); i++) {
+      if (spaces[i].value === '0') {
+        buttons[i].disabled = true;    
+      } else {
+        buttons[i].disabled = false;
+      }
+    }
+  }
+  disableButton() 
+</script>
 </body>
 </html>

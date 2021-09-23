@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var dotenv = require("dotenv");
+dotenv.config();
 
 var homeRouter = require('./routes/home');
 var userRouter = require('./routes/user');
@@ -17,7 +19,8 @@ require('./passport.js')
 //Passport end
 
 //Session
-const sessionStore = MongoStore.create({ mongoUrl: 'mongodb://localhost/checity_test' })
+var mongoDbUrl = process.env.MONGODB_URI || `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@checity.tvpm7.mongodb.net/checity?retryWrites=true&w=majority`;
+const sessionStore = MongoStore.create({ mongoUrl: mongoDbUrl })
 
 app.use(session({
   secret: 'mySecret',
@@ -32,11 +35,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use((req, res, next) => {
-  console.log(req.session);
-  console.log(req.user);
-  next();
-});
+// app.use((req, res, next) => {
+//   console.log(req.session);
+//   console.log(req.user);
+//   next();
+// });
 ///Session End
 
 // view engine setup
