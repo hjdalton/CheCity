@@ -54,8 +54,13 @@ var UserController = {
     req.logout();
     res.redirect('/');
     next();
-  }
+  },
 
+  Profile: function(req,res) {
+    
+    res.render('user/profile.hbs');
+    
+  }
  }
 
 module.exports = UserController;

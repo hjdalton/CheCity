@@ -59,7 +59,8 @@
       {{#each games}}
 
         <div class="game" id= {{this.id}}>
-          Host: {{this.hostname}} <br>
+          Host: <a href="/user/profile{{this.hostid}}">{{this.hostname}}</a> <br>
+          {{this.hostid}}
           Game: {{this.gametype}} <br>
           Description: {{this.description}} <br>
           Date: {{this.date}} <br>
