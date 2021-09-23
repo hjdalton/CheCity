@@ -15,13 +15,13 @@ Cypress.Commands.add('signup', () => {
 
     cy.visit('/user/signup');
 
-    cy.get('#sign-up-form').find('[id="firstname"]').type('cy.test');
-    cy.get('#sign-up-form').find('[id="lastname"]').type('cy.test');
-    cy.get('#sign-up-form').find('[id="username"]').type('testuser');
-    cy.get('#sign-up-form').find('[id="email"]').type('email@email.com');
-    cy.get('#sign-up-form').find('[id="password"]').type('1234');
+    cy.get('#signup-form').find('[id="firstname"]').type('myname');
+    cy.get('#signup-form').find('[id="lastname"]').type('lastname');
+    cy.get('#signup-form').find('[id="username"]').type('testuser');
+    cy.get('#signup-form').find('[id="email"]').type('email@email.com');
+    cy.get('#signup-form').find('[id="password"]').type('1234');
     
-    cy.get('#sign-up-form').submit();
+    cy.get('#signup-form').submit();
   })
 
 
@@ -36,7 +36,6 @@ Cypress.Commands.add('login', () => {
 Cypress.Commands.add('newgame', () => {
   var faker = require('faker');
 
-  var hostname = faker.name.findName();
   var randomDesc = faker.lorem.words();
   var randomDate = '2025-05-05'
   var randomTime = '18:00'
@@ -44,7 +43,6 @@ Cypress.Commands.add('newgame', () => {
 
   cy.visit('/newgame');
 
-  cy.get('.new-game-form').find('[id="hostname"]').type(hostname);
   cy.get('.new-game-form').find('[id="gameoptions"]').select('Bullet Chess');
   cy.get('.new-game-form').find('[id="description"]').type(randomDesc);
   cy.get('.new-game-form').find('[id="date"]').type(randomDate);

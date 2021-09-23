@@ -8,7 +8,6 @@ describe('Log In', function() {
     cy.get('#login-form').submit();
 
     cy.url().should('eq', 'http://localhost:3030/user/login');
-
   })
 
   it('allows a user to log in with correct credentials', function(){
@@ -16,13 +15,13 @@ describe('Log In', function() {
     var username = faker.lorem.word();
     var email = faker.internet.email();
     
-    cy.get('#sign-up-form').find('[id="firstname"]').type('cy.test');
-    cy.get('#sign-up-form').find('[id="lastname"]').type('cy.test');
-    cy.get('#sign-up-form').find('[id="username"]').type(username);
-    cy.get('#sign-up-form').find('[id="email"]').type(email);
-    cy.get('#sign-up-form').find('[id="password"]').type('1234');
+    cy.get('#signup-form').find('[id="firstname"]').type('cy.test');
+    cy.get('#signup-form').find('[id="lastname"]').type('cy.test');
+    cy.get('#signup-form').find('[id="username"]').type(username);
+    cy.get('#signup-form').find('[id="email"]').type(email);
+    cy.get('#signup-form').find('[id="password"]').type('1234');
     
-    cy.get('#sign-up-form').submit();
+    cy.get('#signup-form').submit();
     //refactor above 
     cy.visit('/user/login');
     cy.get('#login-form').find('[id="username"]').type(username);
@@ -31,5 +30,6 @@ describe('Log In', function() {
 
     cy.url().should('eq', 'http://localhost:3030/');
 
+    cy.visit('/user/logout')
   })
 })
