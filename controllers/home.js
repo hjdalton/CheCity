@@ -42,6 +42,7 @@ var HomeController = {
       if (err) { throw err;} 
       res.status(201).redirect('/');
     });  
+  },
 
   Select: function(req, res) {
       res.render('home/filter.hbs')
