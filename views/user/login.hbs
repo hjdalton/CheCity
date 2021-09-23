@@ -4,111 +4,58 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' href="/stylesheets/login-styles.css" type="text/css">
   <title>Log In</title>
 </head>
 <body>
-<nav class="navbar" style="text-align: right;">
-  <div><a class="navbarlink" href="/user/signup">Sign Up</a></div>
-</nav>
-<div class="header">
-  <h1 class="title" style="font-size: 3.5em; text-shadow: 3px 3px #e0e0e0; color: #43D1AF;">CheCity</h1>
-    <p style="font-size: 1.5em;">Welcome to CheCity</p>
-</div>
-<div class="login-form-styles">
-  <h1>Log In</h1>
+<nav role="navigation">
+    <div id="menuToggle">
+        <input type="checkbox"/>
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <ul id="menu">
+          <a href="/newgame"><li>New Game</li></a>
+          <a href="/"><li>Home</li></a>
+          <a href="/user/login"><li>Log In</li></a>
+          <a href="/user/signup"><li>Sign Up</li></a>
+          <a href="/user/logout"><li>Log out</li></a>
+        </ul>
+      </div>
+    </nav>
+
+    {{!-- <nav class="signup"> 
+     <div> 
+       <a href="/user/login">Log in</a> 
+       <a href="/user/signup">Sign Up</a>
+      </div>
+    </nav> --}}
+
+  <div class="search_bar">
+    <img src="/images/CheCityLogoHome.png" alt="logo">
+		<h1 class="title" style="font-size: 3em; text-shadow: 3px 3px #d1d1d1; color: #2f3e46;">CheCity</h1>
+  </div> 
+
+{{!-- <div class="login-form-styles">
   <form id="login-form" action="/user/login" method="post">
-    <label for="username"></label>
-    	<input id="username" type="text" name="username" placeholder="Username"> <br>
-    <label for="password"></label>
+	  <div class="login-form-header">
+      <h1>Log In</h1>
+    </div>
+    <input id="username" type="text" name="username" placeholder="Username"> <br>
     <input id="password" type="password" name="password" placeholder="Password"> <br>
     <input type="submit" value="Submit">
   </form>
+</div> --}}
+
+<div class="login">
+  <h1>Log In!</h1>
+  <form id="login-form" action="/user/login" method="post">
+    <p><input id="username" type="text" name="login" value="" placeholder="Username"></p>
+    <p><input id="password" type="password" name="password" value="" placeholder="Password"></p>
+    <p class="submit"><input type="submit" name="commit" value="Login"></p>
+  </form>
 </div>
-
-
-<style type="text/css">
-.sign-up-form-styles{
-	font: 95% Arial, Helvetica, sans-serif;
-	max-width: 400px;
-	margin: 10px auto;
-	padding: 16px;
-	background: #F7F7F7;
-}
-.sign-up-form-styles h1{
-	background: #43D1AF;
-	padding: 20px 0;
-	font-size: 140%;
-	font-weight: 300;
-	text-align: center;
-	color: #fff;
-	margin: -16px -16px 16px -16px;
-}
-.sign-up-form-styles input[type="text"],
-.sign-up-form-styles input[type="password"],
-.sign-up-form-styles input[type="email"]
-{
-	-webkit-transition: all 0.30s ease-in-out;
-	-moz-transition: all 0.30s ease-in-out;
-	-ms-transition: all 0.30s ease-in-out;
-	-o-transition: all 0.30s ease-in-out;
-	outline: none;
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	width: 100%;
-	background: #fff;
-	margin-bottom: 4%;
-	border: 1px solid #ccc;
-	padding: 3%;
-	color: #555;
-	font: 95% Arial, Helvetica, sans-serif;
-}
-.sign-up-form-styles input[type="text"]:focus,
-.sign-up-form-styles input[type="password"]:focus,
-.sign-up-form-styles input[type="email"]:focus,
-.sign-up-form-styles textarea:focus,
-.sign-up-form-styles select:focus
-{
-	box-shadow: 0 0 5px #43D1AF;
-	padding: 3%;
-	border: 1px solid #43D1AF;
-}
-
-.sign-up-form-styles input[type="submit"] {
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	width: 100%;
-	padding: 3%;
-	background: #43D1AF;
-	border-bottom: 2px solid #30C29E;
-	border-top-style: none;
-	border-right-style: none;
-	border-left-style: none;	
-	color: #fff;
-}
-.sign-up-form-styles input[type="submit"]:hover {
-	background: #2EBC99;
-}
-
-.header {
-  text-align: center;
-}
-
-.navbar > div {
-	display: inline;
-	background: rgb(243, 243, 243);
-	padding: 5px 15px 5px 15px;
-}
-a {
-	text-decoration: none;
-	color: #2EBC99;
-}
-
-.navbar > div:hover {
-	background: rgb(218, 218, 218);
-}
-</style>
   
 </body>
 </html>
