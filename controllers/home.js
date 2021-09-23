@@ -10,7 +10,7 @@ var HomeController = {
   },
 
   New: function(req,res) {
-    res.render('home/newgame.hbs')
+    res.render('home/newgame.hbs');
   },
 
   Create: function(req, res) {
@@ -44,6 +44,10 @@ var HomeController = {
     });  
   },
 
+  About: function(req,res) {
+    res.render('home/about.hbs');
+    },
+
   Select: function(req, res) {
       res.render('home/filter.hbs')
   },
@@ -55,6 +59,7 @@ var HomeController = {
       res.render('home/filter.hbs', { games: games });
     }).sort({ 'created_on': -1 });
   }
+
  }
 
 module.exports = HomeController;
