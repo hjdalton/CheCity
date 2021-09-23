@@ -1,11 +1,15 @@
 var Game = require('../models/game');
+var User = require('../models/user');
 
 var HomeController = {
   Index: function(req, res) {
+    const userId = User.findById({ _id: req.body.id });
+    console.log(userId);
     Game.find(function(err, games) {
       if (err) { throw err; }
 
       res.render('home/index', { games: games });
+
     }).sort({ 'created_on': -1 });
   },
 
@@ -30,12 +34,12 @@ var HomeController = {
     });
   },
 
-  Delete: function(req,res){
-    Game.findByIdAndRemove({ _id: req.body.id }, function(err) {
-      if (err) { throw err; }
+  Delete: function(req,res) {
+      Game.findByIdAndRemove({ _id: req.body.id }, function(err) {
+        if (err) { throw err; }
 
-      res.status(201).redirect('/');
-    });
+        res.status(201).redirect('/');
+      });
   },
 
   Book: function(req, res){
