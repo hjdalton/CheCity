@@ -39,8 +39,9 @@
         <form class="new-game-form" action="/newgame" method="post" onsubmit="hiddenValue()">
           <div class="form-header">
             <h1>List a game!</h1>
-            </div>
-              <input id="hostname" type="text" name="hostname" placeholder="Your Name" required>
+          </div>
+              <input id="hostname" type="hidden" name="hostname" value = "{{user.firstname}} {{user.lastname}} " required>
+              <input id="hostid" type="hidden" name="hostid" value = "{{user._id}} " required>
                     <select id="gameoptions" name="gameoptions" onChange='selectChange(this.value)' required>
                       <option value="" disabled selected>Select your option</option>
                         <option value="bullet">Bullet Chess</option>
@@ -55,7 +56,7 @@
               <div id="geocoder" class="geocoder"></div>
               <input id="address" type="hidden" name="address" value="">
               <input type="submit" value="Submit">
-            </form>
+          </form>
       </div>
 
 

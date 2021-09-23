@@ -10,12 +10,13 @@ var HomeController = {
   },
 
   New: function(req,res) {
-    res.render('home/newgame.hbs');
+    res.render('home/newgame.hbs', {user: req.user})
   },
 
   Create: function(req, res) {
     var game = new Game({ 
-      hostname: req.body.hostname, 
+      hostname: req.body.hostname,
+      hostid: req.body.hostid, 
       gametype: req.body.gametype, 
       description: req.body.description, 
       date: req.body.date, 
