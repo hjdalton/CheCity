@@ -350,3 +350,21 @@ input[type=submit]:active {
 .bookButton[disabled] {
   background: #cad2c5;
 }
+
+.filter {
+  font-size: 1.3em;
+  color: #2f3e46;
+}
+
+#gametype {
+  margin-top: 5px;
+}
+
+#gameoptions {
+  width: 7%;
+  height: 2.4em;
+  border: none;
+  box-shadow: 0 0 5px lightgray;
+  background: #ededed;
+  border-radius: 2%;
+}
