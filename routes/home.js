@@ -8,6 +8,8 @@ router.get('/newgame', checkAuth, HomeController.New);
 router.post('/newgame', checkAuth, HomeController.Create);
 router.post('/deletegame', checkAuth, HomeController.Delete);
 router.post('/bookgame', checkAuth, HomeController.Book);
+router.get('/filter', HomeController.Select);
+router.post('/filter', HomeController.Filtered);
 
 
 module.exports = router;
