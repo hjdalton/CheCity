@@ -104,7 +104,8 @@
     
     for (i = 0; i < (spaces.length); i++) {
       if (spaces[i].value === '0') {
-        buttons[i].disabled = true;    
+        buttons[i].disabled = true;
+        buttons[i].value = 'Fully Booked'    
       } else {
         buttons[i].disabled = false;
       }
