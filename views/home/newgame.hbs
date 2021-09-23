@@ -76,7 +76,34 @@
       style: 'mapbox://styles/dylanp666/cktu3vq2z0j4h18rwopr4umg4',
       center: [0, 0],
       zoom: 3
-  });
+  }); 
+
+  /* if ("geolocation" in navigator) { 
+    navigator.geolocation.getCurrentPosition(position => { 
+        const map = new mapboxgl.Map({
+        // container id specified in the HTML
+          container: 'map',
+
+           // style URL
+          style: 'mapbox://styles/dylanp666/cktu3vq2z0j4h18rwopr4umg4',
+
+         // initial position in [lon, lat] format
+          center: [position.coords.longitude, position.coords.latitude],
+
+         // initial zoom
+
+         zoom: 14
+        });
+    }); 
+    } else { 
+      const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/dylanp666/cktu3vq2z0j4h18rwopr4umg4',
+        center: [0, 0],
+        zoom: 3
+
+       }); 
+    } */
 
   const geocoder = new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
