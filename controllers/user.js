@@ -25,8 +25,8 @@ var UserController = {
       hash: hash, 
       salt: salt
     });
-      
-    User.exists({ username: req.body.username }, function(err, result) {
+
+    User.exists({$or:[{ username: req.body.username},{email: req.body.email }]}, function(err, result) {
       if (err) {
         res.send(err);
       } else {
