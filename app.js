@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var dotenv = require("dotenv");
 dotenv.config();
+var multer = require('multer');
+// var fs = require('fs');
 
 var homeRouter = require('./routes/home');
 var userRouter = require('./routes/user');
@@ -41,6 +43,16 @@ app.use(passport.session());
 //   next();
 // });
 ///Session End
+
+//Multer
+
+app.use(multer({ dest: './uploads/',
+  rename: function (fieldname, filename) {
+    return filename;
+  },
+}));
+
+// Multer end
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

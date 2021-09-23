@@ -1,5 +1,6 @@
 var User = require('../models/user');
 const { genPassword } = require('../passport');
+var fs = require('fs');
 
 var UserController = {
   Signup: function(req, res) {
@@ -21,7 +22,11 @@ var UserController = {
       firstname: req.body.firstname, 
       lastname: req.body.lastname, 
       username: req.body.username, 
-      email: req.body.email, 
+      email: req.body.email,
+      img:{
+        data: fs.readFileSync(req.files.userPhoto.path),
+        contentType: 'image/png',
+      },  
       hash: hash, 
       salt: salt
     });

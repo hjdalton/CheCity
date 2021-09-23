@@ -21,7 +21,11 @@ var UserSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
-  
+  img: {
+    data: Buffer,
+    contentType: String
+  },
+
   hash: String,
 
   salt: String
