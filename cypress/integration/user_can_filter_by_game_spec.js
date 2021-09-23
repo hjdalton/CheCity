@@ -12,9 +12,9 @@ describe('Filter Game', function() {
 
     cy.url().should('eq', 'http://localhost:3030/filter');
 // check that the game types only have bullet-chess
-    cy.get('.games').should('not.contain', 'blitz');
-    cy.get('.games').should('not.contain', 'rapid');
-    cy.get('.games').should('not.contain', 'classic');
+    cy.get('.games').should('not.contain', 'Blitz');
+    cy.get('.games').should('not.contain', 'Rapid');
+    cy.get('.games').should('not.contain', 'Classic');
 
   })
 })
