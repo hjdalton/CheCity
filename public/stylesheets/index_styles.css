@@ -372,4 +372,6 @@ input[type=submit]:active {
   box-shadow: 0 0 5px lightgray;
   background: #ededed;
   border-radius: 2%;
+  font-family: 'Comfortaa';
+  font-size: 60%;
 }
