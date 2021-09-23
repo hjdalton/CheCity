@@ -304,3 +304,14 @@ a {
 {
   transform: none;
 }
+
+.game {
+  box-shadow: 0 0 5px lightgray;
+  background-color: #ededed;
+  border-radius: 1%;
+  margin-left: 35%;
+  margin-right: 35%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  color: #2f3e46;
+}
