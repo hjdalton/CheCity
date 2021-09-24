@@ -82,7 +82,9 @@ html {
 
 .new-game-form input[type="text"],
 .new-game-form input[type="date"],
-.new-game-form textarea[type="text"]
+.new-game-form textarea[type="text"],
+.new-game-form select[name="gameoptions"],
+.new-game-form input[type="time"]
 {
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
@@ -103,7 +105,9 @@ html {
 }
 .new-game-form input[type="text"]:focus,
 .new-game-form input[type="date"]:focus,
-.new-game-form textarea[type="text"]:focus
+.new-game-form textarea[type="text"]:focus,
+.new-game-form select[name="gameoptions"]:focus,
+.new-game-form input[type="time"]:focus
 
 {
 	box-shadow: 0 0 5px lightgray;
