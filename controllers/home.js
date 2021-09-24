@@ -1,11 +1,15 @@
 var Game = require('../models/game');
+var user;
+
 
 var HomeController = {
   Index: function(req, res) {
+    user = req.user
+  
     Game.find(function(err, games) {
       if (err) { throw err; }
 
-      res.render('home/index', {games: games, user: req.user});
+      res.render('home/index', {games: games, user: user});
     }).sort({ 'created_on': -1 });
   },
 
