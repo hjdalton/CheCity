@@ -14,7 +14,7 @@ describe('Game model', function() {
   });
 
   it('has a game', function() {
-    var game = new Game({ hostname: 'Dylan', gametype: 'blitz', description: 'Fast Chess', date: '2018-05-21', time: '18:00', address: '2 Burnt House Farm Cottages' });
+    var game = new Game({ hostname: 'Dylan', hostid: 5555 , gametype: 'blitz', description: 'Fast Chess', date: '2018-05-21', time: '18:00', address: '2 Burnt House Farm Cottages', spaces: 0, guest_ids: '3455' });
 
     expect(game.gametype).toEqual('blitz');
   });
@@ -29,7 +29,7 @@ describe('Game model', function() {
   });
 
   it('can save a game', function(done) {
-    var game = new Game({ hostname: 'Dylan', gametype: 'blitz', description: 'Fast Chess', date: '2018-05-21', time: '18:00', address: '2 Burnt House Farm Cottages' });
+    var game = new Game({ hostname: 'Dylan', hostid: 5555 , gametype: 'blitz', description: 'Fast Chess', date: '2018-05-21', time: '18:00', address: '2 Burnt House Farm Cottages', spaces: 0, guest_ids: '3455' });
 
     game.save(function(err) {
       expect(err).toBeNull();
@@ -45,7 +45,7 @@ describe('Game model', function() {
   });
 
   it('can remove a posted game', function(done) {
-    var game = new Game({ hostname: 'Dylan', gametype: 'blitz', description: 'Fast Chess', date: '2018-05-21', time: '18:00', address: '2 Burnt House Farm Cottages' });
+    var game = new Game({ hostname: 'Dylan', hostid: 5555 , gametype: 'blitz', description: 'Fast Chess', date: '2018-05-21', time: '18:00', address: '2 Burnt House Farm Cottages', spaces: 0, guest_ids: '3455' });
 
     game.save(function(err) {
       expect(err).toBeNull();
@@ -63,8 +63,8 @@ describe('Game model', function() {
   });
 
   it('can find games by game type', function(done) {
-    var game = new Game({ hostname: 'Dylan', gametype: 'rapid', description: 'Fast Chess', date: '2018-05-21', time: '18:00', address: '2 Burnt House Farm Cottages' });
-    var game2 = new Game({ hostname: 'Player', gametype: 'blitz', description: 'Fast Chess', date: '2018-05-21', time: '18:00', address: '2 Burnt House Farm Cottages' });
+    var game = new Game({ hostname: 'Dylan', hostid: 5555 , gametype: 'blitz', description: 'Fast Chess', date: '2018-05-21', time: '18:00', address: '2 Burnt House Farm Cottages', spaces: 1, guest_ids: '3455' });
+    var game2 = new Game({ hostname: 'Peter', hostid: 5565 , gametype: 'rapid', description: 'Fast Chess', date: '2018-05-21', time: '18:00', address: '2 Burnt House Farm Cottages', spaces: 1, guest_ids: '346' });
     
     game.save(function(err) {
       expect(err).toBeNull();
