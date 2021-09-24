@@ -74,17 +74,25 @@
           Spaces: {{this.spaces}}
           <div id= "forms">
 
+            host id: {{this.hostid}}
+            user id: {{session.user._id}}
 
-            <form class="delete-button" name="delete-game-form" id="delete-game-form" action="/deletegame" method="post">
-              <input id="id" type="hidden" name="id" value="{{this._id}}">           
-              <p class="submit"><input type="submit" name="delete" value="Delete"></p>
-            </form>
+            {{!-- {{#if {{this.hostid}} == {{req.user._id}}}} --}}
 
-            <form class="book-button" name="book-game-form" id="book-game-form" action="/bookgame" method="post">
-              <input id="id" type="hidden" name="id" value="{{this._id}}">
-              <input class= "spaces" type= "hidden" value= "{{this.spaces}}">
-              <p class="submit"><input class= "bookButton" type="submit" name="book" value="Book"></p>
-            </form>
+              <form class="delete-button" name="delete-game-form" id="delete-game-form" action="/deletegame" method="post">
+                <input id="id" type="hidden" name="id" value="{{this._id}}">           
+                <p class="submit"><input type="submit" name="delete" value="Delete"></p>
+              </form>
+
+            {{!-- {{else}}   --}}
+
+              <form class="book-button" name="book-game-form" id="book-game-form" action="/bookgame" method="post">
+                <input id="id" type="hidden" name="id" value="{{this._id}}">
+                <input class= "spaces" type= "hidden" value= "{{this.spaces}}">
+                <p class="submit"><input class= "bookButton" type="submit" name="book" value="Book"></p>
+              </form>
+
+            {{!-- {{/if}}   --}}
           </div>
           
         </div>

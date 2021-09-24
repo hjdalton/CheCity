@@ -5,7 +5,7 @@ var HomeController = {
     Game.find(function(err, games) {
       if (err) { throw err; }
 
-      res.render('home/index', { games: games });
+      res.render('home/index', {games: games, user: req.user});
     }).sort({ 'created_on': -1 });
   },
 
